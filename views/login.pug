@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+    head
+        title Аутентификация
+        link(href="/css/bootstrap.css" rel="stylesheet")
+        link(href="css/registry.css" rel="stylesheet")
+        script(src="/fa/fontawesome-all.js")
+
+    body
+        .container
+            .col-sm-6.col-sm-offset-3
+                h1 Логин
+
+                if message.length
+                    .alert.alert-danger= message
+
+                form(action="/login" method="post")
+                    .form-group
+                        label Почта
+                        input.form-control(name="email")
+                    .form-group
+                        label Пароль
+                        input.form-control(name="password" type="password")
+                    button.btn.btn-warning.btn-lg Войти
+
+                hr
+
+                p.d-inline Нужен аккаунт?
+                |
+                |
+                a(href="/signup") Регистрация
+                p Перейти на главную
+                    |
+                    |
+                    a(href="/"): i.fa.fa-home

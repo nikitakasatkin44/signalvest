@@ -1,0 +1,25 @@
+html, body {
+
+}
+
+.navbar-brand img {
+    width: 25px;
+    height: 25px;
+}
+
+.preview {
+    height: 300px;
+    width: 100%;
+}
+
+.vest-container {
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 2px solid black;
+}
+
+.vest-image {
+    height: 350px;
+    width: 100%;
+
+}

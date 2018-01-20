@@ -1,0 +1,51 @@
+doctype html
+html(lang="en")
+    head
+        title Сигнальные жилеты
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(href="/css/bootstrap.css" rel="stylesheet")
+        link(href="/css/registry.css" rel="stylesheet")
+
+    body
+
+        nav.navbar.navbar-expand-sm.bg-dark.navbar-dark.fixed-top#navbar
+            a.navbar-brand(href="/"): span Signalvest
+
+            ul.navbar-nav.mr-auto
+                li.nav-item: a.nav-link(href="/") Главная
+                li.nav-item: a.nav-link(href="/product") Продукция
+                li.nav-item: a.nav-link(href="/about") О компании
+                li.nav-item: a.nav-link(href="/payment") Оплата
+                li.nav-item: a.nav-link(href="/delivery") Доставка
+                li.nav-item: a.nav-link(href="/contact") Контакты
+
+            ul.navbar-nav.ml-auto
+                if user
+                    li.nav-item
+                        a.nav-link Вы зашли под
+                            |
+                            |
+                            span.user #{user.local.email}
+
+
+                    li.nav-item: a.nav-link(href="/logout") Выход
+                else
+                    li.nav-item: a.nav-link(href="/login") Войти
+                    li.nav-item: a.nav-link(href="/signup") Регистрация
+
+        h1 Сигнальные жилеты
+
+        .container
+            .row
+                for image in images
+                    .col-sm-3.vest-container
+                        img.vest-image(src=image.path)
+
+                if !images.length
+                    p Не найдено ни одного жилета
+
+
+
+
+

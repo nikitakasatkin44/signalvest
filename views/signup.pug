@@ -1,0 +1,36 @@
+doctype html
+html(lang="en")
+    head
+        title Регистрация
+        link(href="/css/bootstrap.css" rel="stylesheet")
+        link(href="css/registry.css" rel="stylesheet")
+        script(src="/fa/fontawesome-all.js")
+
+    body
+        .container
+            .col-sm-6.col-sm-offset-3
+                h1 Регистрация
+
+                if message.length
+                    .alert.alert-danger= message
+
+                form(action="/signup" method="post")
+                    .form-group
+                        label Почта
+                        input.form-control(name="email")
+                    .form-group
+                        label Пароль
+                        input.form-control(name="password" type="password")
+
+                    button.btn.btn-warning.btn-lg Регистрация
+
+                hr
+
+                p.d-inline Уже есть аккаунт?
+                |
+                |
+                a(href="/login") Войти
+                p Перейти на главную
+                    |
+                    |
+                    a(href="/"): i.fa.fa-home

@@ -1,0 +1,26 @@
+doctype html
+html(lang="en")
+    head
+        title Профиль
+        link(href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet")
+        link(href="custom.css" rel="stylesheet")
+
+    body
+        .container
+            .page-header.text-center
+                h1 Личный профиль
+                a.btn.btn-default.btn-sm(href="/logout") Логаут
+
+            .row
+                .col-sm-12
+                    .card
+                        h3 Учетная запись
+                        p ИД пользователя: #{user._id}
+                        p Почта: #{user.local.email}
+
+
+
+
+
+
+
