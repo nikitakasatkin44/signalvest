@@ -10,13 +10,15 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const flash = require('connect-flash');
-const routerMain = require('./routes/general');
 const routerImage = require('./routes/imagefile');
 const configDB = require('./config/database.js');
-const Acl = require('virgen-acl').Acl;
-const acl = new Acl();
 
 mongoose.connect(configDB.imagesDB);
+
+mongoose.connection.on('error', function (err){
+    console.log('Mongodb connection error: ' + err);
+});
+
 require('./config/passport')(passport);
 
 app.set('views', path.join(__dirname, 'views'));
@@ -25,31 +27,16 @@ app.set('trust proxy', true);
 
 const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), {flags: 'a'});
 
-acl.addRole("guest");
-acl.addRole("member");
-acl.addRole("admin");
-acl.addResource("vests");
-acl.allow("admin", 'edit', 'vests');
-
-acl.query('admin', 'edit', 'vests', function(err, allowed) {
-    if (allowed) {
-        console.log('commenting allowed!')
-    } else {
-        console.log('commenting disallowed')
-    }
-});
-
 app.use(cookieParser());
-app.use(bodyParser());
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(morgan('dev'));
 app.use(morgan('combined', {stream: accessLogStream}));
-app.use(session({ secret: 'handjomandjopendjo'}));
+app.use(session({resave: true, secret: 'handjomandjopendjo', saveUninitialized: false}));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
 require('./auth/routes.js')(app, passport);
-app.use('/', routerMain);
 app.use('/', routerImage);
 app.use(express.static('public'));
 app.use(express.static('public/uploads'));

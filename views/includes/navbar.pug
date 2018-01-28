@@ -1,0 +1,39 @@
+nav.navbar.navbar-expand-sm.bg-dark.navbar-dark.fixed-top#navbar
+    a.navbar-brand(href="/"): span Signalvest
+
+    ul.navbar-nav.mr-auto
+        li.nav-item: a#index.nav-link(href="/") Главная
+        li.nav-item: a#product.nav-link(href="/product") Продукция
+        li.nav-item: a#about.nav-link(href="/about") О компании
+        li.nav-item: a#payment.nav-link(href="/payment") Оплата
+        li.nav-item: a#delivery.nav-link(href="/delivery") Доставка
+        li.nav-item: a#contact.nav-link(href="/contact") Контакты
+
+
+
+    ul.navbar-nav.ml-auto
+        if user && user.local.role === 'admin'
+
+            li.nav-item: button.btn.btn-sm.btn-outline-info#adminBtn: i.fa.fa-cogs.fa-2x
+            li.nav-item: a#admin.nav-link(href="/admin") Админ
+        if user
+            li.nav-item
+                a.nav-link(href="/profile") Вы зашли под
+                    |
+                    |
+                    span.user #{user.local.email}
+
+            li.nav-item: a.nav-link(href="/logout") Выход
+        else
+            li.nav-item: a.nav-link(href="/login") Войти
+            li.nav-item: a.nav-link(href="/signup") Регистрация
+
+    script.
+        var tab = document.getElementById("#{activeLink}");
+        var tabs = document.querySelectorAll(".nav-item > .nav-link")
+
+        for (i = 0; i < tabs.length; i++) {
+            tabs[i].className.replace(" active", "")
+        }
+
+        tab.className += " active";

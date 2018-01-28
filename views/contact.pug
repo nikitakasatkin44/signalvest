@@ -1,0 +1,43 @@
+doctype html
+html(lang="en")
+    include includes/head
+
+    body
+        include includes/navbar
+
+        .bg-5
+            .contact-container
+                .row
+                    .col-sm-6
+                        div.pt-2.pl-3
+                            i.fa.fa-phone.fa-pull-left.fa-3x
+                            h1.phone(style="vertical-align: middle") +7 (910) 370-00-28
+
+
+                    .col-sm-6
+                        div.pr-3
+                            i.fas.fa-envelope.fa-pull-right.fa-2x
+                            h5.text-right nikita.kasatkin44@gmail.com
+                            i.fas.fa-building.fa-pull-right.fa-2x
+                            h5.text-right г. Кострома, Проспект Текстильщиков 21/51.
+
+                #googleMap
+
+        script(src="js/map.js")
+        script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQn3D3GpK8l7QkbqYOh0ofy2LqZn_gK10&callback=initializeMap")
+
+        include includes/footer
+
+
+
+
+
+
+
+
+
+
+
+
+
+

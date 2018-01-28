@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="acl" type="javaScript">
+    <properties>
+      <option name="frameworkName" value="node_modules" />
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/node_modules/acl" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/node_modules/acl" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

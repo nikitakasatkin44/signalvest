@@ -1,10 +1,6 @@
 doctype html
 html(lang="en")
-    head
-        title Регистрация
-        link(href="/css/bootstrap.css" rel="stylesheet")
-        link(href="css/registry.css" rel="stylesheet")
-        script(src="/fa/fontawesome-all.js")
+    include includes/head
 
     body
         .container
@@ -15,6 +11,10 @@ html(lang="en")
                     .alert.alert-danger= message
 
                 form(action="/signup" method="post")
+                    .form-group
+                        label Логин
+                        input.form-control(name="login")
+
                     .form-group
                         label Почта
                         input.form-control(name="email")

@@ -2,21 +2,39 @@ doctype html
 html(lang="en")
     head
         title Профиль
-        link(href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet")
-        link(href="custom.css" rel="stylesheet")
+        link(href="css/bootstrap.css" rel="stylesheet")
+        link(href="css/profile.css" rel="stylesheet")
 
     body
         .container
-            .page-header.text-center
-                h1 Личный профиль
-                a.btn.btn-default.btn-sm(href="/logout") Логаут
+            .text-center
+                h1.pb-3 Личный профиль
+                a.btn.btn-danger.btn-lg.mr-2(href="/logout") Выйти
+                a.btn.btn-info.btn-lg(href="/") На главную
 
             .row
-                .col-sm-12
-                    .card
+                .col-sm-8
+                    .card.mt-3
                         h3 Учетная запись
-                        p ИД пользователя: #{user._id}
-                        p Почта: #{user.local.email}
+                        p Электронная почта: #{user.local.email}
+
+
+                        if user.local.login
+                            p Логин: #{user.local.login}
+                        if !user.local.login
+                            p Логин: не заполнен
+
+                        if user.local.phone
+                            p Телефон: #{user.local.phone}
+                        if !user.local.phone
+                            p Телефон: не заполнен
+
+                        if user.local.regDate
+                            p Зарегистрирован: #{regDate}
+                        if !user.local.regDate
+                            p Дата регистрации: не указана
+
+
 
 
 

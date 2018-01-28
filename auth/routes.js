@@ -1,84 +1,143 @@
-// app/routes.js
+const express = require('express');
+const User       		= require('./models/user');
+const getdate = require('./../config/getdate');
+const Param = require('./models/param');
+
 module.exports = function(app, passport) {
 
-	// =====================================
-	// HOME PAGE (with login links) ========
-	// =====================================
 	app.get('/', function(req, res) {
 
-        let user;
-        if (isLoggedIn) {
-            user = req.user
-        } else {
-            user = ''
-        }
+        let user = '';
+        if (isLoggedIn) {user = req.user}
 
 		res.render('index.pug', {
-            user: user
+            user: user,
+            activeLink: 'index'
 		});
 	});
 
-	// =====================================
-	// LOGIN ===============================
-	// =====================================
-	// show the login form
-	app.get('/login', function(req, res) {
+    const routes = require('../routes/imagefile');
+    app.get('/product', function(req, res) {
+        routes.getImages(function(err, vests) {
+            if (err) {
+                throw err;
+            }
+            let user = '';
+            if (isLoggedIn) {user = req.user}
+            res.render('product.pug', {
+                images: vests,
+                user: user,
+                activeLink: 'product'
+            });
+        });
+    });
 
-		// render the page and pass in any flash data if it exists
+
+	app.get('/login', function(req, res) {
 		res.render('login.pug', { message: req.flash('loginMessage') });
 	});
 
-	// process the login form
 	app.post('/login', passport.authenticate('local-login', {
-		successRedirect : '/profile', // redirect to the secure profile section
-		failureRedirect : '/login', // redirect back to the signup page if there is an error
-		failureFlash : true // allow flash messages
+		successRedirect : '/profile',
+		failureRedirect : '/login',
+		failureFlash : true
 	}));
 
-	// =====================================
-	// SIGNUP ==============================
-	// =====================================
-	// show the signup form
 	app.get('/signup', function(req, res) {
-
-		// render the page and pass in any flash data if it exists
 		res.render('signup.pug', { message: req.flash('signupMessage') });
 	});
 
-	// process the signup form
 	app.post('/signup', passport.authenticate('local-signup', {
-		successRedirect : '/profile', // redirect to the secure profile section
-		failureRedirect : '/signup', // redirect back to the signup page if there is an error
-		failureFlash : true // allow flash messages
+		successRedirect : '/profile',
+		failureRedirect : '/signup',
+		failureFlash : true
 	}));
 
-	// =====================================
-	// PROFILE SECTION =========================
-	// =====================================
-	// we will want this protected so you have to be logged in to visit
-	// we will use route middleware to verify this (the isLoggedIn function)
 	app.get('/profile', isLoggedIn, function(req, res) {
 		res.render('profile.pug', {
-			user : req.user // get the user out of session and pass to template
+			user : req.user,
+            registrDate: getdate.curDate(req.user.local.regDate)
 		});
 	});
 
-	// =====================================
-	// LOGOUT ==============================
-	// =====================================
 	app.get('/logout', function(req, res) {
 		req.logout();
 		res.redirect('/');
 	});
+
+	app.get('/about', function (req, res) {
+        let user = '';
+        if (isLoggedIn) {user = req.user}
+		res.render('about.pug', {
+            user: user,
+			activeLink: 'about'
+		})
+    });
+
+    app.get('/payment', function (req, res) {
+        let user = '';
+        if (isLoggedIn) {user = req.user}
+        res.render('payment.pug', {
+            user: user,
+            activeLink: 'payment'
+        })
+    });
+
+    app.get('/delivery', function (req, res) {
+        let user = '';
+        if (isLoggedIn) {user = req.user}
+        res.render('delivery.pug', {
+            user: user,
+            activeLink: 'delivery'
+        })
+    });
+
+    app.get('/contact', function(req, res) {
+        let user = '';
+        if (isLoggedIn) {user = req.user}
+        res.render('contact.pug', {
+            user: user,
+            activeLink: 'contact'
+        });
+    });
+
+    app.get('/admin', isLoggedIn, (req, res) => {
+
+        user = req.user;
+
+        if (!user)
+            res.redirect('/');
+
+        if (user.local.role !== 'admin')
+            res.redirect('/');
+
+        res.render('admin.pug', {});
+            });
+
+    app.post('/admin-edit', (req, res) => {
+
+        const newParam = new Param();
+        newParam.adminSettings.EditMode = true;
+
+        newParam.save(function(err) {
+            if (err)
+                throw err;
+        });
+    })
 };
 
-// route middleware to make sure
 function isLoggedIn(req, res, next) {
-
-	// if user is authenticated in the session, carry on
 	if (req.isAuthenticated())
 		return next();
 
-	// if they aren't redirect them to the home page
 	res.redirect('/');
+}
+
+function isAdmin(req, res, next) {
+    isLoggedIn();
+    user = req.user;
+    if (!user)
+        res.redirect('/');
+    if (user.local.role !== 'admin')
+        res.redirect('/');
 }

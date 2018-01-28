@@ -3,7 +3,7 @@ const router = express.Router();
 const multer = require('multer');
 const fs = require('fs');
 const mongoose = require('mongoose');
-const path1 = require('path');
+const pathLib = require('path');
 
 const imagePath = mongoose.Schema({
     path: {
@@ -13,11 +13,16 @@ const imagePath = mongoose.Schema({
     },
     originalname: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     date: {
         type: Date,
         default: Date.now
+    },
+    price: {
+        type: Number,
+        default: 100
     }
 });
 
@@ -33,6 +38,10 @@ router.getImageById = function(id, callback) {
 
 router.addImage = function(image, callback) {
     Image.create(image, callback);
+
+    if (callback) {
+        console.log('Ошибка при добавлении жилета');
+    }
 };
 
 const storage = multer.diskStorage({
@@ -47,23 +56,18 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage: storage});
 
-// router.get('/', function(req, res, next) {
-//     res.render('index.pug');
-// });
-
 router.post('/uploadPhoto', upload.any(), function(req, res, next) {  // Загрузить изображение
-    res.send(req.files);
+    // res.send(req.files);
 
-    const path = '/uploads/' + path1.basename(req.files[0].path);
-    const imageName = req.files[0].originalname;
+    const path = '/uploads/' + pathLib.basename(req.files[0].path);
+    const imageName = pathLib.parse(req.files[0].originalname).name;
 
     const imagePath = {};
     imagePath['path'] = path;
     imagePath['originalname'] = imageName;
 
-    router.addImage(imagePath, function(err) {
-
-    });
+    router.addImage(imagePath, function(err) {});
+    res.redirect('/admin');
 });
 
 router.get('/picture/:id',function(req,res){  // Получить одну фотографию
