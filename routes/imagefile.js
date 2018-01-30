@@ -4,8 +4,16 @@ const multer = require('multer');
 const fs = require('fs');
 const mongoose = require('mongoose');
 const pathLib = require('path');
+const db = mongoose.connection;
+
+const configDB = require('../config/database.js');
+const Schema = mongoose.Schema;
+const autoIncrement = require('mongoose-auto-increment');
+const connection = mongoose.createConnection(configDB.imagesDB);
+autoIncrement.initialize(connection);
 
 const imagePath = mongoose.Schema({
+    vestID: { type: Schema.Types.ObjectId },
     path: {
         type: String,
         required: true,
@@ -23,10 +31,24 @@ const imagePath = mongoose.Schema({
     price: {
         type: Number,
         default: 100
+    },
+    description: {
+        type: String
+    },
+    composition: {
+        type: String
     }
 });
 
-const Image = module.exports = mongoose.model('files', imagePath);
+imagePath.plugin(autoIncrement.plugin, {
+    model: 'files',
+    field: 'vestID',
+    startAt: 1,
+    incrementBy: 1,
+});
+const Image = connection.model('files', imagePath);
+
+// const Image = module.exports = mongoose.model('files', imagePath);
 
 router.getImages = function(callback, limit) {
     Image.find(callback).limit(limit);
@@ -67,17 +89,17 @@ router.post('/uploadPhoto', upload.any(), function(req, res, next) {  // Заг�
     imagePath['originalname'] = imageName;
 
     router.addImage(imagePath, function(err) {});
-    res.redirect('/admin');
+    res.redirect('/product');
 });
 
-router.get('/picture/:id',function(req,res){  // Получить одну фотографию
+router.get('/vest/:id',function(req,res){  // Получить одну фотографию
     Image.findById(req.params.id,function(err,file){
         if (err) {
             throw err;
         }
         console.log(file);
         console.log(file.path);
-        res.render("image.pug",{image: file.path});
+        res.render("vest.pug",{image: file});
 
     });
 });

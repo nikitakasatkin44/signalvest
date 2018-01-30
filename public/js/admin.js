@@ -1,4 +1,10 @@
 $(document).ready(function() {
+    if (localStorage.getItem("editMode") === "true") {
+        showAdminElements();
+    } else if ((localStorage.getItem("editMode") === "false")) {
+        hideAdminElements()
+    }
+
     $("#adminBtn").on('click', function() {
         if (localStorage.getItem("editMode") === "true") {
             localStorage.setItem("editMode", false);
@@ -16,7 +22,7 @@ $(document).ready(function() {
     });
 });
 
-function hideAdminElements() {
+function showAdminElements() {
     const elements = document.getElementsByClassName("edit-price");
 
     for (i = 0; i < elements.length; i++) {
@@ -24,7 +30,7 @@ function hideAdminElements() {
     }
 }
 
-function showAdminElements() {
+function hideAdminElements() {
     const elements = document.getElementsByClassName("edit-price");
 
     for (i = 0; i < elements.length; i++) {

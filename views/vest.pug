@@ -1,0 +1,26 @@
+doctype html
+html(lang="en")
+    include includes/head
+
+    body
+        include includes/navbar
+
+        .bg-1
+            .container.white-list
+                .row
+                    .col-sm-6
+                        img(src=image.path style="width: 100%;")
+
+                    .col-sm-6
+                        h1.text-left= image.originalname
+                        pre= image.description
+
+                        h4 Состав:
+                        pre.d-inline= image.composition
+
+
+
+        include includes/footer
+
+
+

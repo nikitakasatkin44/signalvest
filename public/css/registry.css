@@ -61,7 +61,8 @@ html, body {
     width: 100%;
     padding-top: 100px;
     padding-bottom: 100px;
-    height: 1500px;
+    /*height: 1500px;*/
+    object-fit: cover;
 }
 
 .bg-2 {
