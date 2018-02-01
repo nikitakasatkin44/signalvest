@@ -79,7 +79,7 @@ html, body {
 
 .white-list {
     background: rgba(255, 255, 255, 0.85);
-    padding-bottom: 100px;
+    padding-bottom: 20px;
 }
 
 .tmpl {
@@ -310,5 +310,15 @@ footer a {
 }
 
 .edit-price {
+
+}
+
+.pagination {
+    /*background-color: red;*/
+    width: 200px;
+}
+
+.prev-page {
+    /*background-color: red;*/
 
 }

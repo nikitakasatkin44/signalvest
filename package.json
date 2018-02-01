@@ -46,6 +46,7 @@
     "pug": "^2.0.0-rc.4",
     "session": "^0.1.0",
     "virgen-acl": "latest",
-    "winston": "^2.4.0"
+    "winston": "^2.4.0",
+    "view-helpers": "latest"
   }
 }

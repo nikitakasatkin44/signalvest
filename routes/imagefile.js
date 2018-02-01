@@ -48,8 +48,6 @@ imagePath.plugin(autoIncrement.plugin, {
 });
 const Image = connection.model('files', imagePath);
 
-// const Image = module.exports = mongoose.model('files', imagePath);
-
 router.getImages = function(callback, limit) {
     Image.find(callback).limit(limit);
 };
@@ -102,6 +100,31 @@ router.get('/vest/:id',function(req,res){  // Получить одну фото
         res.render("vest.pug",{image: file});
 
     });
+});
+
+router.get('/product/:page', function(req, res, next) {
+    const perPage = 6;
+    const page = Math.max(0, req.param('page'));
+
+    Image.find()
+        .select('originalname path price vestID')
+        .limit(perPage)
+        .skip((perPage * page) - perPage)
+        .sort({
+            originalname: 'asc'
+        })
+        .exec(function(err, vests) {
+            Image.count().exec(function(err, count) {
+                res.render('product.pug', {
+                    images: vests,
+                    current: page,
+                    pages:  Math.ceil(count/perPage),
+                    activeLink: 'product'
+                })
+            })
+        })
+
+
 });
 
 module.exports = router;

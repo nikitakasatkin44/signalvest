@@ -10,13 +10,10 @@ html(lang="en")
                 .row.text-center
                     .line
                         h1.float-center.d-inline-block НАША ПРОДУКЦИЯ
-                        form(action="/uploadPhoto" method="POST" enctype="multipart/form-data")
-                            input(type="file" name="myimage")
-                            input(type="submit" name="submit" value="submit")
 
                     for image in images
                         .col-sm-4.vest-wrapper
-                            a(href='vest/' + image.id)
+                            a(href='/vest/' + image.id)
                                 img.vest-image(src=image.path)
                             p.font-weight-bold.text-center.d-inline-block.pl-4= image.originalname
                             strong.circle
@@ -24,15 +21,42 @@ html(lang="en")
                             if user && user.local.role === "admin"
                                 button.btn.border-white.edit-price +
 
-
-
-
-
-
                         if !images.length
                             p Не найдено ни одного жилета
 
+
+                .row
+                    .col-sm-2.offset-5
+                        .pagination.mx-auto.pt-4
+                            a#prevPage.btn.btn-lg.btn-outline-dark.mr-1(href=prevPage)
+                                i.fas.fa-arrow-circle-left.fa-2x.prev-page
+                            a#nextPage.btn.btn-lg.btn-outline-dark.ml-1(href=nextPage)
+                                i.fas.fa-arrow-circle-right.fa-2x
+
+
         include includes/footer
+
+    script.
+        var prevPage = #{current} - 1
+        var nextPage = #{current} + 1
+        var prevPageHref = '/product/' + prevPage
+        var nextPageHref = '/product/' + nextPage
+        var count = #{pages}
+        var isNext = count >= nextPage
+        var isPrev = 1 <= prevPage
+
+        if (!isNext) {
+            document.getElementById('nextPage').className += " disabled";
+        }
+
+        if (!isPrev) {
+            document.getElementById('prevPage').className += " disabled";
+        }
+
+        var x = document.getElementById('prevPage')
+        var y = document.getElementById('nextPage')
+        x.setAttribute('href', prevPageHref)
+        y.setAttribute('href', nextPageHref)
 
 
 

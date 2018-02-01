@@ -17,6 +17,7 @@ module.exports = function(app, passport) {
 	});
 
     const routes = require('../routes/imagefile');
+
     app.get('/product', function(req, res) {
         routes.getImages(function(err, vests) {
             if (err) {
@@ -31,7 +32,6 @@ module.exports = function(app, passport) {
             });
         });
     });
-
 
 	app.get('/login', function(req, res) {
 		res.render('login.pug', { message: req.flash('loginMessage') });

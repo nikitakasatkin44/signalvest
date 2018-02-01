@@ -12,7 +12,9 @@ const session = require('express-session');
 const flash = require('connect-flash');
 const routerImage = require('./routes/imagefile');
 const configDB = require('./config/database.js');
+const helpers = require('view-helpers');
 
+app.use(helpers('app'));
 mongoose.connect(configDB.imagesDB);
 
 mongoose.connection.on('error', function (err){
