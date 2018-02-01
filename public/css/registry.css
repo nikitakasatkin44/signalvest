@@ -58,6 +58,7 @@ html, body {
 
 .bg-1 {
     background: url(/img/background/building.jpg) no-repeat center;
+    min-height: 800px;
     width: 100%;
     padding-top: 100px;
     padding-bottom: 100px;
@@ -71,7 +72,9 @@ html, body {
 }
 
 .bg-3 {
-    background: url(/img/background/99.jpg) no-repeat;
+    background: linear-gradient(to right, rgba(167,207,223,1) 0%,rgba(35,83,138,1) 100%);
+    /*background: linear-gradient(to right, rgba(228,245,252,1) 0%,rgba(191,232,249,1) 50%,rgba(159,216,239,1) 51%,rgba(42,176,237,1) 100%);*/
+    /*background: url(/img/background/99.jpg) no-repeat;*/
     width: 100%;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -288,21 +291,15 @@ footer a {
 
 .delivery-container {
     margin-top: 100px;
+    max-width: 1500px;
 }
 
 .delivery-man {
-    position: absolute;
-    top: 480px;
-    left: 220px;
+    object-fit: cover;
 }
 
 .delivery-car {
-    position: absolute;
-    top: 140px;
-    left: 150px;
-    transform: scaleX(-1);
-    filter: FlipH;
-    -ms-filter: "FlipH";
+    object-fit: cover;
 }
 
 .delivery-card .card-header {
@@ -315,7 +312,6 @@ footer a {
 
 .pagination {
     /*background-color: red;*/
-    width: 200px;
 }
 
 .prev-page {

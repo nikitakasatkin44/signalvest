@@ -1,0 +1,42 @@
+doctype html
+html(lang="en")
+    include ../views/includes/head
+
+    body
+        include ../views/includes/navbar
+
+        .bg-1
+            .container.white-list
+                .row.text-center
+                    .line
+                        h1.float-center.d-inline-block НАША ПРОДУКЦИЯ
+                        form(action="/uploadPhoto" method="POST" enctype="multipart/form-data")
+                            input(type="file" name="myimage")
+                            input(type="submit" name="submit" value="submit")
+
+                    for image in images
+                        .col-sm-4.vest-wrapper
+                            a(href='vest/' + image.id)
+                                img.vest-image(src=image.path)
+                            p.font-weight-bold.text-center.d-inline-block.pl-4= image.originalname
+                            strong.circle
+                                span.circle-text= image.price
+                            if user && user.local.role === "admin"
+                                button.btn.border-white.edit-price +
+
+
+
+
+
+
+                        if !images.length
+                            p Не найдено ни одного жилета
+
+        include ../views/includes/footer
+
+
+
+
+
+
+

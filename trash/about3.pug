@@ -1,0 +1,72 @@
+doctype html
+html(lang="en")
+    include ../views/includes/head
+
+    body
+        include ../views/includes/navbar
+        .bg-3
+            .container
+                #mycarousel.carousel.slide.col-sm-6(data-ride="carousel")
+                    ul.carousel-indicators
+                        li.active(data-target="#mycarousel" date-slide-to="0")
+                        li(data-target="#mycarousel" data-slide-to="1")
+                        li(data-target="#mycarousel" data-slide-to="2")
+                        li(data-target="#mycarousel" data-slide-to="3")
+
+                    .carousel-inner(role="listbox")
+                        .carousel-item.active
+                            img(src="img/about/e.jpg" alt="first image")
+                            .carousel-caption
+                                h3 First image
+                                p text
+                        .carousel-item
+                            img(src="img/about/q.jpg" alt="second image")
+                            .carousel-caption
+                                h3 Second image
+
+                        .carousel-item
+                            img(src="img/about/r.jpg" alt="third image")
+                            .carousel-caption
+                                h3 Third image
+
+                        .carousel-item
+                            img(src="img/about/w.jpg" alt="third image")
+                            .carousel-caption
+                                h3 Third image
+
+                    a.carousel-control-prev(href="#mycarousel" data-slide="prev")
+                        span.carousel-control-prev-icon
+                    a.carousel-control-next(href="#mycarousel" data-slide="next")
+                        span.carousel-control-next-icon
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        include ../views/includes/footer
+
+
+
+
+
+
+
+
+
+
+
+
