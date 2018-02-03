@@ -322,5 +322,10 @@ footer a {
 
 .prev-page {
     /*background-color: red;*/
+}
 
+#addVest {
+    position: relative;
+    top: 0px;
+    right: 0px;
 }

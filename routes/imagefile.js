@@ -87,7 +87,7 @@ router.post('/uploadPhoto', upload.any(), function(req, res, next) {  // Заг�
     imagePath['originalname'] = imageName;
 
     router.addImage(imagePath, function(err) {});
-    res.redirect('/product');
+    // res.redirect('/product');
 });
 
 router.get('/vest/:id',function(req,res){  // Получить одну фотографию

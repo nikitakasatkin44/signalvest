@@ -1,13 +1,14 @@
 const mongoose = require('mongoose');
 const bcrypt   = require('bcrypt-nodejs');
+const autoIncrement = require('mongoose-auto-increment');
+const configDB = require('../../config/database');
+const connection = mongoose.createConnection(configDB.imagesDB);
+autoIncrement.initialize(connection);
 
 const userSchema = mongoose.Schema({
-
     local            : {
-        login : {
-            type: String,
-            default: ''
-        },
+        userID: { type: mongoose.Schema.Types.ObjectId },
+        login : {type: String, default: ''},
         name         : String,
         surname      : String,
         email        : String,
@@ -40,6 +41,15 @@ const userSchema = mongoose.Schema({
     }
 
 });
+
+userSchema.plugin(autoIncrement.plugin, {
+    model: 'users',
+    field: 'userID',
+    startAt: 1,
+    incrementBy: 1
+});
+
+const User = connection.model('users', userSchema);
 
 // methods ======================
 // generating a hash

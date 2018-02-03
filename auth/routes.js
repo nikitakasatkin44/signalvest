@@ -1,5 +1,5 @@
 const express = require('express');
-const User       		= require('./models/user');
+const User = require('./models/user');
 const getdate = require('./../config/getdate');
 const Param = require('./models/param');
 
@@ -124,6 +124,21 @@ module.exports = function(app, passport) {
                 throw err;
         });
     });
+
+    app.get('/createAdmin', (req, res) => {
+        const newAdmin = new User();
+
+        newAdmin.local.email = 'nikita.kasatkin44@gmail.com';
+        newAdmin.local.password = newAdmin.generateHash('1234');
+        newAdmin.local.login = 'nick';
+        newAdmin.local.regDate = new Date();
+
+        newAdmin.save(function(err) {
+            if (err) throw err;
+
+            console.log('Admin created!');
+        });
+    })
 };
 
 function isLoggedIn(req, res, next) {

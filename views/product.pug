@@ -1,6 +1,7 @@
 doctype html
 html(lang="en")
     include includes/head
+    script(src="/js/vestUpload.js")
 
     body
         include includes/navbar
@@ -18,12 +19,9 @@ html(lang="en")
                             p.font-weight-bold.text-center.d-inline-block.pl-4= image.originalname
                             strong.circle
                                 span.circle-text= image.price
-                            if user && user.local.role === "admin"
-                                button.btn.border-white.edit-price +
 
                         if !images.length
                             p Не найдено ни одного жилета
-
 
                 .row
                     .pagination.mx-auto.pt-4
@@ -32,11 +30,36 @@ html(lang="en")
                         a#nextPage.btn.btn-lg.btn-outline-dark.ml-1(href=nextPage)
                             i.fas.fa-arrow-circle-right.fa-2x
 
+            #modalVest.modal.fade
+                .modal-dialog
+                    .modal-content
+                        .modal-header
+                            h4.modal-title Загрузка нового жилета
+                            button.button.close(data-dismiss="modal") &times;
+                        .modal-body
+                            form#VestForm(action="/uploadPhoto" method="POST" enctype="multipart/form-data")
+                                .input-group
+                                    label.input-group-btn
+                                        span.btn.btn-primary.btn-lg Выбрать
+                                            input(type="file" style="display: none" name="myimage")
+                                    input.form-control(type="text" readonly)
+                                label.btn.btn-success.btn-file.mt-3
+                                    span Отправить
+                                    input(type="submit" name="myimage" value="submit" style="display: none")
+                        .modal-footer
+                            button.button.btn.btn-danger(data-dismiss="modal") Закрыть
+
+
+
 
 
         include includes/footer
 
     script.
+        $('#VestForm').submit(function() {
+            $('#modalVest').modal('hide');
+        })
+
         var prevPage = #{current} - 1
         var nextPage = #{current} + 1
         var prevPageHref = '/product/' + prevPage
@@ -57,10 +80,5 @@ html(lang="en")
         var y = document.getElementById('nextPage')
         x.setAttribute('href', prevPageHref)
         y.setAttribute('href', nextPageHref)
-
-
-
-
-
 
 
