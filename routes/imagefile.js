@@ -103,6 +103,8 @@ router.get('/vest/:id',function(req,res){  // Получить одну фото
 });
 
 router.get('/product/:page', function(req, res, next) {
+    let user = '';
+    if (isLoggedIn) {user = req.user}
     const perPage = 6;
     const page = Math.max(0, req.param('page'));
 
@@ -119,12 +121,20 @@ router.get('/product/:page', function(req, res, next) {
                     images: vests,
                     current: page,
                     pages:  Math.ceil(count/perPage),
-                    activeLink: 'product'
+                    activeLink: 'product',
+                    user: user
                 })
             })
         })
 
 
 });
+
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated())
+        return next();
+
+    res.redirect('/');
+}
 
 module.exports = router;

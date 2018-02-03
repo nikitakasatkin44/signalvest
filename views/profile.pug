@@ -34,6 +34,21 @@ html(lang="en")
                         if !user.local.regDate
                             p Дата регистрации: не указана
 
+                        if user.local.role
+                            p Роль: #{user.local.role}
+
+                        form(action="/define" method="POST")
+                            .form-inline.pl-4
+                                .form-check
+                                    label.radio-inline(for="adminCheck") Admin &nbsp
+                                        input#adminCheck(type="radio" name="defineRole" value="admin")
+                                    label.radio-inline.ml-5(for="guestCheck") Guest &nbsp
+                                        input#guestCheck(type="radio" name="defineRole" value="guest")
+                                    button.btn.btn-primary.ml-5 Submit
+
+
+
+
 
 
 

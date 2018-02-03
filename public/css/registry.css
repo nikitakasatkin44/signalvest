@@ -72,12 +72,18 @@ html, body {
 }
 
 .bg-3 {
-    background: linear-gradient(to right, rgba(167,207,223,1) 0%,rgba(35,83,138,1) 100%);
+    background: url(/img/background/сигнал.jpg) center;
+    /*background-size: cover;*/
+    /*background: linear-gradient(to right, rgba(167,207,223,1) 0%,rgba(35,83,138,1) 100%);*/
     /*background: linear-gradient(to right, rgba(228,245,252,1) 0%,rgba(191,232,249,1) 50%,rgba(159,216,239,1) 51%,rgba(42,176,237,1) 100%);*/
     /*background: url(/img/background/99.jpg) no-repeat;*/
-    width: 100%;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    /*width: 1920px;*/
+    /*overflow-x: hidden;*/
+    /*overflow-y: hidden;*/
+    width: auto;
+    height: 1500px;
+    background-size: 100% 100%;
+    /*object-fit: scale-down;*/
 }
 
 .white-list {

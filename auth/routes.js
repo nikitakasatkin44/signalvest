@@ -123,7 +123,7 @@ module.exports = function(app, passport) {
             if (err)
                 throw err;
         });
-    })
+    });
 };
 
 function isLoggedIn(req, res, next) {
