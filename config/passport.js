@@ -22,7 +22,7 @@ module.exports = function(passport) {
         passReqToCallback : true
     },
     function(req, login, password, done) {
-        User.findOne({ 'local.login' :  email }, function(err, user) {
+        User.findOne({ 'local.login' :  login }, function(err, user) {
             if (err)
                 return done(err);
 
@@ -54,9 +54,9 @@ module.exports = function(passport) {
         passwordField : 'password',
         passReqToCallback : true
     },
-    function(req, email, password, done) {
+    function(req, login, password, done) {
 
-        User.findOne({ 'local.login' :  email }, function(err, user) {
+        User.findOne({ 'local.login' :  login }, function(err, user) {
             if (err)
                 return done(err);
 
