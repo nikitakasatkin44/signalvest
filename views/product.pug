@@ -18,7 +18,10 @@ html(lang="en")
                                 img.vest-image(src=image.path)
                             p.font-weight-bold.text-center.d-inline-block.pl-4= image.originalname
                             strong.circle
-                                span.circle-text= image.price
+                                .circle-text
+                                    span= image.price
+                                    span &nbspруб.
+
 
                         if !images.length
                             p Не найдено ни одного жилета
@@ -43,10 +46,12 @@ html(lang="en")
                                 .input-group
                                     label.input-group-btn
                                         span.btn.btn-primary.btn-lg Выбрать
-                                            input(type="file" style="display: none" name="myimage")
-                                    input.form-control(type="text" readonly)
-                                label.btn.btn-success.btn-file.mt-3
-                                    span Отправить
+                                            input#vestLocation(type="file" style="display: none" name="myimage")
+                                    input.form-control.form-control-lg(type="text" readonly)
+                                input.form-control.mt-2(name="price" placeholder='Цена')
+                                textarea.form-control.mt-2(name="description" rows=5 placeholder='Описание')
+                                button#createVestBtn.btn.btn-success.btn-file.mt-3(disabled)
+                                    span Создать
                                     input(type="submit" name="myimage" value="submit" style="display: none")
                         .modal-footer
                             button.button.btn.btn-danger(data-dismiss="modal") Закрыть

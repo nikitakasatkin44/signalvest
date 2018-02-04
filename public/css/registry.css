@@ -100,33 +100,32 @@ html, body {
 
 .circle {
     position: absolute;
-    height: 50px;
-    width: 50px;
+    height: 30px;
+    width: 85px;
     display: table-cell;
     text-align: center;
     vertical-align: middle;
-    border-radius: 50%;
-    background: grey;
+    border-radius: 10%;
+    background: rgba(63, 152, 194, 0.85) !important;
     color: white;
     align-content: right;
     bottom: 60px;
     right: 70px;
-    transition: transform .5s;
+    /*transition: transform .5s;*/
     box-shadow: 3px -5px rgba(255, 255, 255, 1.00);
 }
 
 
 .circle-text {
     position: absolute;
-    bottom: 10px;
-    left: 10px
+    bottom: 2px;
+    left: 6px;
 }
 
-.circle:hover {
-    color: rgb(254,51,18);
-    box-shadow: 3px -5px rgba(255,79,40, 0.30);
-
-}
+/*.circle:hover {*/
+    /*color: rgb(254,51,18);*/
+    /*box-shadow: 3px -5px rgba(255,79,40, 0.30);*/
+/*}*/
 
 footer {
     background-color: #2d2d30;
@@ -296,4 +295,8 @@ footer a {
     position: relative;
     top: 0px;
     right: 0px;
+}
+
+#VestForm [readonly] {
+    height: 48px;
 }

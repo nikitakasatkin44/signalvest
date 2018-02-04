@@ -11,6 +11,14 @@ $(document).ready( function() {
         console.log(numFiles);
         console.log(label);
     });
+
+    $('#createVestBtn').attr('disabled', true);
+    $('#vestLocation').change(function() {
+        if ($(this).val())
+            $('#createVestBtn').attr('disabled', false);
+        else
+            $('#createVestBtn').attr('disabled', true);
+    })
 });
 
 $(function () {

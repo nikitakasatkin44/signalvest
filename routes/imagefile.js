@@ -81,13 +81,17 @@ router.post('/uploadPhoto', upload.any(), function(req, res, next) {  // Заг�
 
     const path = '/uploads/' + pathLib.basename(req.files[0].path);
     const imageName = pathLib.parse(req.files[0].originalname).name;
+    const price = req.body.price;
+    const description = req.body.description;
 
     const imagePath = {};
     imagePath['path'] = path;
     imagePath['originalname'] = imageName;
+    imagePath['price'] = price;
+    imagePath['description'] = description;
 
     router.addImage(imagePath, function(err) {});
-    // res.redirect('/product');
+    res.redirect('/product/1');
 });
 
 router.get('/vest/:id',function(req,res){  // Получить одну фотографию

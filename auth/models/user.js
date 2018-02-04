@@ -14,7 +14,9 @@ const userSchema = mongoose.Schema({
         email        : String,
         password     : String,
         phone        : Number,
-        regDate      : Date,
+        regDate      : {
+            type: Date, default: new Date()
+        },
         role: {
             type: String,
             enum: ['guest', 'member', 'admin'],

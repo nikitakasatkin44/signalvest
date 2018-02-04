@@ -14,19 +14,26 @@ html(lang="en")
                         img(src=image.path style="width: 100%;")
                         if user && user.local.role === 'admin'
                             .editPriceTmplWrapper
-                                .edit-inp.d-none
+                                .edit-inp.d-none.form-inline
                                     form(action="/update-vest" method="POST")
-                                        input.form-control(placeholder='Сумма' size="5" name="price")
-                                        input(hidden value=image.id name="id")
-                                        button.form-control.btn.btn-success ОК
+                                        .input-group
+                                            input.form-control.form-control-lg(placeholder='Сумма' size="5" name="price")
+                                            .input-group-btn
+                                                button.form-control.btn.btn-success ОК
+                                            input(hidden value=image.id name="id")
+
                                 .editPriceTmpl
                                     strong.circle-big
-                                        span.circle-text-big= image.price
+                                        .circle-text-big
+                                            span= image.price
+                                            span &nbspруб.
                         else
                             .priceTmplWrapper
                                 .editPriceTmpl
                                     strong.circle-big
-                                        span.circle-text-big= image.price
+                                        .circle-text-big
+                                            span= image.price
+                                            span &nbspруб.
 
 
                     .col-sm-6
