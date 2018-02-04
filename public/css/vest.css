@@ -5,7 +5,7 @@
     display: table-cell;
     text-align: center;
     vertical-align: middle;
-    border-radius: 10%;
+    border-radius: 10px;
     bottom: 76px;
     right: 164px;
 }
@@ -17,7 +17,7 @@
     display: table-cell;
     text-align: center;
     vertical-align: middle;
-    border-radius: 10%;
+    border-radius: 10px;
     bottom: 76px;
     right: 70px;
 }
@@ -29,7 +29,7 @@
     display: table-cell;
     text-align: center;
     vertical-align: middle;
-    border-radius: 10%;
+    border-radius: 10px;
     background: rgba(63, 152, 194, 0.85) !important;
 }
 
