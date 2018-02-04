@@ -63,8 +63,8 @@
       <file leaf-file-name="head.pug" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/includes/head.pug">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="30" lean-forward="true" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+            <state relative-caret-position="306">
+              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -400,7 +400,7 @@
       <workItem from="1517638701360" duration="6081000" />
       <workItem from="1517652732392" duration="18726000" />
       <workItem from="1517681235965" duration="6217000" />
-      <workItem from="1517731197866" duration="27540000" />
+      <workItem from="1517731197866" duration="28349000" />
     </task>
     <task id="LOCAL-00001" summary="28.01">
       <created>1517161396618</created>
@@ -521,11 +521,18 @@
       <option name="project" value="LOCAL" />
       <updated>1517776437912</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="04.02 final commit">
+      <created>1517777079896</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1517777079896</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="276081000" />
+    <option name="totallyTimeSpent" value="276890000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -997,8 +1004,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/includes/head.pug">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="30" lean-forward="true" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+        <state relative-caret-position="306">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
