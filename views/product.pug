@@ -15,7 +15,7 @@ html(lang="en")
                     for image in images
                         .col-sm-4.vest-wrapper
                             a(href='/vest/' + image.id)
-                                img.vest-image(src=image.path)
+                                img.vest-image(src=image.path alt=image.originalname)
                             p.font-weight-bold.text-center.d-inline-block.pl-4= image.originalname
                             strong.circle
                                 .circle-text
