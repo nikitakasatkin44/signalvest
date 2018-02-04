@@ -133,7 +133,8 @@ router.get('/product/:page', function(req, res, next) {
                     pages:  Math.ceil(count/perPage),
                     activeLink: 'product',
                     user: user,
-                    action: 'Добавить жилет'
+                    action: 'Добавить жилет',
+                    title: 'Наша продукция'
                 })
             })
         })

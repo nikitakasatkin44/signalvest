@@ -11,7 +11,8 @@ module.exports = function(app, passport) {
 
 		res.render('index.pug', {
             user: user,
-            activeLink: 'index'
+            activeLink: 'index',
+            title: 'Сигнальные жилеты'
 		});
 	});
 
@@ -27,13 +28,17 @@ module.exports = function(app, passport) {
             res.render('product.pug', {
                 images: vests,
                 user: user,
-                activeLink: 'product'
+                activeLink: 'product',
+                title: 'Наша продукция'
             });
         });
     });
 
 	app.get('/login', function(req, res) {
-		res.render('login.pug', { message: req.flash('loginMessage') });
+		res.render('login.pug', {
+		    message: req.flash('loginMessage'),
+            title: 'Авторизация'
+		});
 	});
 
 	app.post('/login', passport.authenticate('local-login', {
@@ -43,7 +48,10 @@ module.exports = function(app, passport) {
 	}));
 
 	app.get('/signup', function(req, res) {
-		res.render('signup.pug', { message: req.flash('signupMessage') });
+		res.render('signup.pug', {
+		    message: req.flash('signupMessage'),
+            title: 'Регистрация'
+		});
 	});
 
 	app.post('/signup', passport.authenticate('local-signup', {
@@ -55,7 +63,8 @@ module.exports = function(app, passport) {
 	app.get('/profile', isLoggedIn, function(req, res) {
 		res.render('profile.pug', {
 			user : req.user,
-            regDate: getdate.curDate(req.user.local.regDate)
+            regDate: getdate.curDate(req.user.local.regDate),
+            title: 'Личный профиль'
 		});
 	});
 
@@ -69,7 +78,8 @@ module.exports = function(app, passport) {
         if (isLoggedIn) {user = req.user}
 		res.render('about.pug', {
             user: user,
-			activeLink: 'about'
+			activeLink: 'about',
+            title: 'О компании'
 		})
     });
 
@@ -78,7 +88,8 @@ module.exports = function(app, passport) {
         if (isLoggedIn) {user = req.user}
         res.render('payment.pug', {
             user: user,
-            activeLink: 'payment'
+            activeLink: 'payment',
+            title: 'Оплата заказа'
         })
     });
 
@@ -87,7 +98,8 @@ module.exports = function(app, passport) {
         if (isLoggedIn) {user = req.user}
         res.render('delivery.pug', {
             user: user,
-            activeLink: 'delivery'
+            activeLink: 'delivery',
+            title: 'Доставка заказа'
         })
     });
 
@@ -96,7 +108,8 @@ module.exports = function(app, passport) {
         if (isLoggedIn) {user = req.user}
         res.render('contact.pug', {
             user: user,
-            activeLink: 'contact'
+            activeLink: 'contact',
+            title: 'Контактные данные'
         });
     });
 
