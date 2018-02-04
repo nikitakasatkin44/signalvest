@@ -21,7 +21,7 @@ module.exports = function(passport) {
         passwordField : 'password',
         passReqToCallback : true
     },
-    function(req, email, password, done) {
+    function(req, login, password, done) {
         User.findOne({ 'local.login' :  email }, function(err, user) {
             if (err)
                 return done(err);
@@ -32,9 +32,9 @@ module.exports = function(passport) {
 
                 const newUser            = new User();
 
-                newUser.local.email    = email;
+                newUser.local.login    = login;
                 newUser.local.password = newUser.generateHash(password);
-                newUser.local.login = req.body.login;
+                newUser.local.email = req.body.email;
                 newUser.local.phone = req.body.phone;
                 newUser.local.regDate = new Date();
                 newUser.local.role = 'admin';

@@ -56,7 +56,7 @@ module.exports = function(app, passport) {
 	app.get('/profile', isLoggedIn, function(req, res) {
 		res.render('profile.pug', {
 			user : req.user,
-            registrDate: getdate.curDate(req.user.local.regDate)
+            regDate: getdate.curDate(req.user.local.regDate)
 		});
 	});
 
