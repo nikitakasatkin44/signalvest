@@ -73,17 +73,9 @@ html, body {
 
 .bg-3 {
     background: url(/img/background/сигнал.jpg) center;
-    /*background-size: cover;*/
-    /*background: linear-gradient(to right, rgba(167,207,223,1) 0%,rgba(35,83,138,1) 100%);*/
-    /*background: linear-gradient(to right, rgba(228,245,252,1) 0%,rgba(191,232,249,1) 50%,rgba(159,216,239,1) 51%,rgba(42,176,237,1) 100%);*/
-    /*background: url(/img/background/99.jpg) no-repeat;*/
-    /*width: 1920px;*/
-    /*overflow-x: hidden;*/
-    /*overflow-y: hidden;*/
     width: auto;
     height: 1500px;
     background-size: 100% 100%;
-    /*object-fit: scale-down;*/
 }
 
 .white-list {
@@ -123,6 +115,7 @@ html, body {
     box-shadow: 3px -5px rgba(255, 255, 255, 1.00);
 }
 
+
 .circle-text {
     position: absolute;
     bottom: 10px;
@@ -152,7 +145,6 @@ footer a {
 
 .about-wrapper {
     background: rgba(255, 255, 255, 0.85);
-    /*border-radius: 50px;*/
     padding: 30px;
     border-top-right-radius: 20px;
 }
@@ -187,23 +179,6 @@ footer a {
     margin: 5%;
 }
 
-/*.price-container {*/
-    /*position: absolute;*/
-    /*height: 50px;*/
-    /*width: 50px;*/
-    /*display: table-cell;*/
-    /*text-align: center;*/
-    /*vertical-align: middle;*/
-    /*border-radius: 50%;*/
-    /*background: grey;*/
-    /*color: white;*/
-    /*align-content: right;*/
-    /*bottom: 60px;*/
-    /*right: 70px;*/
-    /*transition: transform .5s;*/
-    /*box-shadow: 3px -4px rgba(255, 255, 255, 1.00);*/
-/*}*/
-
 .carousel-inner img {
     width: 100%;
     height: 100%;
@@ -217,20 +192,16 @@ footer a {
 /*Доставка*/
 .bg-4 {
     padding-top: 58px;
-    /*background: url(/img/delivery/1.jpg) no-repeat;*/
     height: 1500px;
     width: 100%;
-    /*filter: blur(1px);*/
 }
 
 .delivery-background {
     background: url(/img/delivery/1.jpg);
-    /*background: url(/img/background/99.jpg) no-repeat;*/
     width: 100%;
     filter: blur(1px);
     z-index: 1;
     height: 1000px;
-    /*position: fixed;*/
     display: block;
     left: 0;
     right: 0;
@@ -256,13 +227,10 @@ footer a {
 
 .self-delivery {
     background: url(/img/delivery/2.jpg);
-    /*background: url(/img/background/99.jpg) no-repeat;*/
     background-size: cover;
-    /*width: 100%;*/
     filter: blur(1px);
     z-index: 1;
     height: 1450px;
-    /*position: fixed;*/
     display: block;
     left: 0;
     right: 0;
@@ -317,11 +285,11 @@ footer a {
 }
 
 .pagination {
-    /*background-color: red;*/
+
 }
 
 .prev-page {
-    /*background-color: red;*/
+
 }
 
 #addVest {

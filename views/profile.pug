@@ -18,7 +18,6 @@ html(lang="en")
                         h3 Учетная запись
                         p Электронная почта: #{user.local.email}
 
-
                         if user.local.login
                             p Логин: #{user.local.login}
                         if !user.local.login
@@ -37,14 +36,14 @@ html(lang="en")
                         if user.local.role
                             p Роль: #{user.local.role}
 
-                        form(action="/define" method="POST")
-                            .form-inline.pl-4
-                                .form-check
-                                    label.radio-inline(for="adminCheck") Admin &nbsp
-                                        input#adminCheck(type="radio" name="defineRole" value="admin")
-                                    label.radio-inline.ml-5(for="guestCheck") Guest &nbsp
-                                        input#guestCheck(type="radio" name="defineRole" value="guest")
-                                    button.btn.btn-primary.ml-5 Submit
+                        //form(action="/define" method="POST")
+                        //    .form-inline.pl-4
+                        //        .form-check
+                        //            label.radio-inline(for="adminCheck") Admin &nbsp
+                        //                input#adminCheck(type="radio" name="defineRole" value="admin")
+                        //            label.radio-inline.ml-5(for="guestCheck") Guest &nbsp
+                        //                input#guestCheck(type="radio" name="defineRole" value="guest")
+                        //            button.btn.btn-primary.ml-5 Submit
 
 
 

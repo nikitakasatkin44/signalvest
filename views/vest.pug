@@ -1,6 +1,8 @@
 doctype html
 html(lang="en")
     include includes/head
+    script(src="/js/editVest.js")
+    link(href="/css/vest.css" rel="stylesheet")
 
     body
         include includes/navbar
@@ -10,17 +12,67 @@ html(lang="en")
                 .row
                     .col-sm-6
                         img(src=image.path style="width: 100%;")
+                        if user && user.local.role === 'admin'
+                            .editPriceTmplWrapper
+                                .edit-inp.d-none
+                                    form(action="/update-vest" method="POST")
+                                        input.form-control(placeholder='Сумма' size="5" name="price")
+                                        input(hidden value=image.id name="id")
+                                        button.form-control.btn.btn-success ОК
+                                .editPriceTmpl
+                                    strong.circle-big
+                                        span.circle-text-big= image.price
+                        else
+                            .priceTmplWrapper
+                                .editPriceTmpl
+                                    strong.circle-big
+                                        span.circle-text-big= image.price
+
 
                     .col-sm-6
-                        h1.text-left= image.originalname
-                        pre= image.description
+                        #desc-container
+                            if user && user.local.role === 'admin'
+                                form(action="/update-description" method="POST")
+                                    input(hidden value=image.id name="id")
+                                    button#editDescBtn.btn.btn-secondary.float-right.ml-2(type="button")
+                                        i.fa.fa-pencil-alt.fa-2x
+                                    button#applyDescBtn.btn.btn-success.float-right.d-none
+                                        i.fa.fa-check.fa-2x
 
-                        h4 Состав:
-                        pre.d-inline= image.composition
+                                    #editTmpl.d-none
+                                        .col-sm-9
+                                            input#editHeader.form-control.form-control-lg(name="headerText" value=image.originalname)
+                                        .col-sm-12.mt-3
+                                            textarea#editComposition.form-control.form-control-lg(name="description" rows=10)=image.description
+
+
+                            #viewTmpl
+                                h1#descHeaderInp.text-left= image.originalname
+                                pre#CompInp.d-inline= image.description
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
         include includes/footer
+
+
+
 
 
 

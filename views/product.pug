@@ -27,6 +27,8 @@ html(lang="en")
                     .pagination.mx-auto.pt-4
                         a#prevPage.btn.btn-lg.btn-outline-dark.mr-1(href=prevPage)
                             i.fas.fa-arrow-circle-left.fa-2x.prev-page
+                        a#homePage.btn.btn-lg.btn-outline-dark(href="/product/1")
+                            i.fas.fa-home.fa-2x
                         a#nextPage.btn.btn-lg.btn-outline-dark.ml-1(href=nextPage)
                             i.fas.fa-arrow-circle-right.fa-2x
 
@@ -80,5 +82,8 @@ html(lang="en")
         var y = document.getElementById('nextPage')
         x.setAttribute('href', prevPageHref)
         y.setAttribute('href', nextPageHref)
+
+        document.getElementById('addVestBtn').innerText = "Добавить";
+
 
 

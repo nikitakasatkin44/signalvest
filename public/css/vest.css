@@ -1,0 +1,59 @@
+.editPriceTmplWrapper {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 50%;
+    bottom: 60px;
+    right: 70px;
+}
+
+.priceTmplWrapper {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 50%;
+    bottom: 60px;
+    right: 70px;
+}
+
+.editPriceTmpl {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 50%;
+    background: grey;
+}
+
+
+.circle-big {
+    color: white;
+    align-content: right;
+    transition: transform .5s;
+    box-shadow: 3px -5px rgba(255, 255, 255, 1.00);
+}
+
+.circle-text-big {
+    font-size: 3rem;
+    position: absolute;
+    bottom: 14px;
+    left: 10px
+}
+
+.edit-inp {
+    position: relative;
+    top: 31px;
+}
+
+/*Заголовок, описание*/
+#descHeaderInp {
+    font-size: 24px;
+}

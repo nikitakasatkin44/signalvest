@@ -91,13 +91,19 @@ router.post('/uploadPhoto', upload.any(), function(req, res, next) {  // Заг�
 });
 
 router.get('/vest/:id',function(req,res){  // Получить одну фотографию
-    Image.findById(req.params.id,function(err,file){
+    Image.findById(req.params.id, function(err,file){
+        let user = '';
+        if (isLoggedIn) {user = req.user}
         if (err) {
             throw err;
         }
         console.log(file);
         console.log(file.path);
-        res.render("vest.pug",{image: file});
+        res.render("vest.pug",{
+            image: file,
+            user: user,
+            activeLink: 'product',
+        });
 
     });
 });
@@ -122,12 +128,32 @@ router.get('/product/:page', function(req, res, next) {
                     current: page,
                     pages:  Math.ceil(count/perPage),
                     activeLink: 'product',
-                    user: user
+                    user: user,
+                    action: 'Добавить жилет'
                 })
             })
         })
+});
 
+router.post('/update-vest', function(req ,res, next) {
+    const vestID = req.body.id;
+    const newPrice = req.body.price;
+    Image.findByIdAndUpdate(vestID, { price: newPrice}, function(err, result) {
+        if (err) throw err;
+        console.log(result);
+    });
+    res.redirect('/product/1');
+});
 
+router.post('/update-description', function(req, res, next) {
+    const vestID = req.body.id;
+    const newHeader = req.body.headerText;
+    const newDesc = req.body.description;
+    Image.findByIdAndUpdate(vestID, { originalname: newHeader, description: newDesc}, function(err, result) {
+        if (err) throw err;
+        console.log(result);
+    });
+    res.redirect('/product/1');
 });
 
 function isLoggedIn(req, res, next) {
