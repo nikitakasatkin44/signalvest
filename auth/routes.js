@@ -1,5 +1,4 @@
 const express = require('express');
-const User = require('./models/user');
 const getdate = require('./../config/getdate');
 const Param = require('./models/param');
 
@@ -125,20 +124,20 @@ module.exports = function(app, passport) {
         });
     });
 
-    app.get('/createAdmin', (req, res) => {
-        const newAdmin = new User();
-
-        newAdmin.local.email = 'nikita.kasatkin44@gmail.com';
-        newAdmin.local.password = newAdmin.generateHash('1234');
-        newAdmin.local.login = 'nick';
-        newAdmin.local.regDate = new Date();
-
-        newAdmin.save(function(err) {
-            if (err) throw err;
-
-            console.log('Admin created!');
-        });
-    })
+    // app.get('/createAdmin', (req, res) => {
+    //     const newAdmin = new User();
+    //
+    //     newAdmin.local.email = 'nikita.kasatkin44@gmail.com';
+    //     newAdmin.local.password = newAdmin.generateHash('1234');
+    //     newAdmin.local.login = 'nick';
+    //     newAdmin.local.regDate = new Date();
+    //
+    //     newAdmin.save(function(err) {
+    //         if (err) throw err;
+    //
+    //         console.log('Admin created!');
+    //     });
+    // })
 };
 
 function isLoggedIn(req, res, next) {
@@ -146,13 +145,4 @@ function isLoggedIn(req, res, next) {
 		return next();
 
 	res.redirect('/');
-}
-
-function isAdmin(req, res, next) {
-    isLoggedIn();
-    user = req.user;
-    if (!user)
-        res.redirect('/');
-    if (user.local.role !== 'admin')
-        res.redirect('/');
 }

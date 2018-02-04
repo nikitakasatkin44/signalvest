@@ -4,8 +4,6 @@ const multer = require('multer');
 const fs = require('fs');
 const mongoose = require('mongoose');
 const pathLib = require('path');
-const db = mongoose.connection;
-
 const configDB = require('../config/database.js');
 const Schema = mongoose.Schema;
 const autoIncrement = require('mongoose-auto-increment');
@@ -76,8 +74,10 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage: storage});
 
-router.post('/uploadPhoto', upload.any(), function(req, res, next) {  // Загрузить изображение
+router.post('/uploadPhoto', isLoggedIn, upload.any(), function(req, res, next) {
     // res.send(req.files);
+
+    if (req.user.local.role !== 'admin') res.redirect('/');
 
     const path = '/uploads/' + pathLib.basename(req.files[0].path);
     const imageName = pathLib.parse(req.files[0].originalname).name;
@@ -140,6 +140,9 @@ router.get('/product/:page', function(req, res, next) {
 });
 
 router.post('/update-vest', function(req ,res, next) {
+
+    if (req.user.local.role !== 'admin') res.redirect('/');
+
     const vestID = req.body.id;
     const newPrice = req.body.price;
     Image.findByIdAndUpdate(vestID, { price: newPrice}, function(err, result) {
