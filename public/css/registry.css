@@ -72,7 +72,7 @@ html, body {
 }
 
 .bg-3 {
-    background: url(/img/background/сигнал.jpg) center;
+    background: url(/img/background/сигнал.png) center;
     width: auto;
     height: 1500px;
     background-size: 100% 100%;
@@ -293,10 +293,46 @@ footer a {
 
 #addVest {
     position: relative;
-    top: 0px;
-    right: 0px;
+    top: 0;
+    right: 0;
 }
 
 #VestForm [readonly] {
     height: 48px;
+}
+
+.main-header {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 4.5rem;
+    /*top: 601px;*/
+    left: 36%;
+    position: relative;
+}
+
+.left-header {
+    font-family: 'PT Sans', sans-serif;
+    color: white;
+    font-size: 2.5rem;
+    /*top: 746px;*/
+    position: absolute;
+    left: 37px;
+    top: 30px;
+}
+
+.center-caption {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2rem;
+}
+
+.center-caption img{
+    object-fit: contain;
+}
+
+
+.subsection-1 {
+    height: 600px;
+}
+
+.center-text {
+    font-family: 'Open Sans', sans-serif;
 }
