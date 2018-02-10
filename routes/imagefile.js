@@ -56,10 +56,6 @@ router.getImageById = function(id, callback) {
 
 router.addImage = function(image, callback) {
     Image.create(image, callback);
-
-    if (callback) {
-        console.log('Ошибка при добавлении жилета');
-    }
 };
 
 const storage = multer.diskStorage({
@@ -75,7 +71,6 @@ const storage = multer.diskStorage({
 const upload = multer({storage: storage});
 
 router.post('/uploadPhoto', isLoggedIn, upload.any(), function(req, res, next) {
-    // res.send(req.files);
 
     if (req.user.local.role !== 'admin') res.redirect('/');
 
@@ -90,38 +85,49 @@ router.post('/uploadPhoto', isLoggedIn, upload.any(), function(req, res, next) {
     imagePath['price'] = price;
     imagePath['description'] = description;
 
-    router.addImage(imagePath, function(err) {});
+    router.addImage(imagePath, function(err) {
+        if (err) {
+            err.error_text = 'Ошибка при загрузке жилета';
+            return next(err);
+        }
+    });
     res.redirect('/product/1');
 });
 
-router.get('/vest/:id',function(req,res){  // Получить одну фотографию
-    Image.findById(req.params.id, function(err,file){
+router.get('/vest/:id',function(req, res, next){
+    Image.findById(req.params.id, function(err, file){
+        if (err) {
+            err.error_text = 'Не существует жилета с тамим идентификатором';
+            return next(err);
+        }
         let user = '';
         if (isLoggedIn) {user = req.user}
-        if (err) {
-            throw err;
-        }
+
         console.log(file);
         console.log(file.path);
         res.render("vest.pug",{
             image: file,
             user: user,
-            activeLink: 'product',
+            activeLink: 'product_1',
         });
 
     });
 });
 
-router.get('/product/:page', function(req, res, next) {
+router.get('/product/1', function(req, res, next) {
     let user = '';
     if (isLoggedIn) {user = req.user}
-    const perPage = 6;
-    const page = Math.max(0, req.param('page'));
+    const perPage = 30;
+    // const page = Math.max(0, req.param('page'));
+
+    let title;
+    let modalTitle;
+    title = 'Жилеты';
+    modalTitle = 'Загрузка нового жилета';
 
     Image.find()
         .select('originalname path price vestID')
         .limit(perPage)
-        .skip((perPage * page) - perPage)
         .sort({
             originalname: 'asc'
         })
@@ -129,16 +135,59 @@ router.get('/product/:page', function(req, res, next) {
             Image.count().exec(function(err, count) {
                 res.render('product.pug', {
                     images: vests,
-                    current: page,
                     pages:  Math.ceil(count/perPage),
-                    activeLink: 'product',
+                    activeLink: 'product_1',
                     user: user,
                     action: 'Добавить жилет',
-                    title: 'Наша продукция'
+                    title: title,
+                    modalTitle: modalTitle,
+                    uploadAction: '/uploadPhoto',
+                    rootFolder: '/vest/'
                 })
             })
         })
 });
+
+// router.get('/product/:page', function(req, res, next) {
+//     let user = '';
+//     if (isLoggedIn) {user = req.user}
+//     const perPage = 30;
+//     const page = Math.max(0, req.param('page'));
+//
+//     let title;
+//     let modalTitle;
+//     if (page == 1) {
+//         title = 'Жилеты';
+//         modalTitle = 'Загрузка нового жилета';
+//     }
+//
+//     if (page == 2) {
+//         title = 'Плащи';
+//         modalTitle = 'Загрузка нового плаща';
+//     }
+//
+//     Image.find()
+//         .select('originalname path price vestID')
+//         .limit(perPage)
+//         .skip((perPage * page) - perPage)
+//         .sort({
+//             originalname: 'asc'
+//         })
+//         .exec(function(err, vests) {
+//             Image.count().exec(function(err, count) {
+//                 res.render('product.pug', {
+//                     images: vests,
+//                     current: page,
+//                     pages:  Math.ceil(count/perPage),
+//                     activeLink: 'product_' + page,
+//                     user: user,
+//                     action: 'Добавить жилет',
+//                     title: title,
+//                     modalTitle: modalTitle
+//                 })
+//             })
+//         })
+// });
 
 router.post('/update-vest', function(req ,res, next) {
 

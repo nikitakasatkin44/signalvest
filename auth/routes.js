@@ -4,6 +4,10 @@ const Param = require('./models/param');
 
 module.exports = function(app, passport) {
 
+    app.get('/error', function (req, res) {
+        res.status(500).send('500 error')
+    });
+
 	app.get('/', function(req, res) {
 
         let user = '';

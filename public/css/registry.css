@@ -57,7 +57,7 @@ html, body {
 }
 
 .bg-1 {
-    background: url(/img/background/building.jpg) no-repeat center;
+    background: url(/img/background/building.jpg) no-repeat center fixed;
     min-height: 800px;
     width: 100%;
     padding-top: 100px;
@@ -305,7 +305,7 @@ footer a {
     font-family: 'PT Sans', sans-serif;
     font-size: 4.5rem;
     /*top: 601px;*/
-    left: 36%;
+    left: 32%;
     position: relative;
 }
 
@@ -328,11 +328,14 @@ footer a {
     object-fit: contain;
 }
 
-
 .subsection-1 {
     height: 600px;
 }
 
 .center-text {
+    /*margin-top: 1rem;*/
+    /*margin-bottom: 1rem;*/
+    line-height: 1.8rem;
+    font-size: 1.6rem;
     font-family: 'Open Sans', sans-serif;
 }

@@ -44,9 +44,10 @@
     "passport-local": "~0.1.6",
     "path": "^0.12.7",
     "pug": "^2.0.0-rc.4",
+    "rotating-file-stream": "^1.3.4",
     "session": "^0.1.0",
+    "view-helpers": "latest",
     "virgen-acl": "latest",
-    "winston": "^2.4.0",
-    "view-helpers": "latest"
+    "winston": "^3.0.0-rc1"
   }
 }
