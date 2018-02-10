@@ -37,7 +37,7 @@ module.exports = function(passport) {
                 newUser.local.email = req.body.email;
                 newUser.local.phone = req.body.phone;
                 newUser.local.regDate = new Date();
-                newUser.local.role = 'admin';
+                newUser.local.role = 'guest';
 
                 newUser.save(function(err) {
                     if (err)
