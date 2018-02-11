@@ -82,23 +82,26 @@ router.post('/uploadCloak', isLoggedIn, upload.any(), function(req, res, next) {
 });
 
 router.get('/cloak/:id',function(req, res, next){
-    Cloak.findById(req.params.id, function(err, file){
-        if (err) {
-            err.error_text = 'Не существует плаща с тамим идентификатором';
-            return next(err);
-        }
-        let user = '';
-        if (isLoggedIn) {user = req.user}
+    try {
+        Cloak.findById(req.params.id, function(err, file){
+            if (err) {
+                err.error_text = 'Не существует плаща с тамим идентификатором';
+                return next(err);
+            }
+            let user = '';
+            if (isLoggedIn) {user = req.user}
 
-        console.log(file);
-        console.log(file.path);
-        res.render("vest.pug",{
-            image: file,
-            user: user,
-            activeLink: 'product_2',
+            res.render("vest.pug",{
+                image: file,
+                user: user,
+                activeLink: 'product_2',
+            });
+
         });
+    } catch(err) {
+        console.log('Не найден жилет');
+    }
 
-    });
 });
 
 router.get('/product/2', function(req, res, next) {

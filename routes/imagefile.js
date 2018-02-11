@@ -95,23 +95,27 @@ router.post('/uploadPhoto', isLoggedIn, upload.any(), function(req, res, next) {
 });
 
 router.get('/vest/:id',function(req, res, next){
-    Image.findById(req.params.id, function(err, file){
-        if (err) {
-            err.error_text = 'Не существует жилета с тамим идентификатором';
-            return next(err);
-        }
-        let user = '';
-        if (isLoggedIn) {user = req.user}
+    try {
+        Image.findById(req.params.id, function(err, file){
+            if (err) {
+                err.error_text = 'Не существует жилета с тамим идентификатором';
+                return next(err);
+            }
+            let user = '';
+            if (isLoggedIn) {user = req.user}
 
-        console.log(file);
-        console.log(file.path);
-        res.render("vest.pug",{
-            image: file,
-            user: user,
-            activeLink: 'product_1',
+            res.render("vest.pug",{
+                image: file,
+                user: user,
+                activeLink: 'product_1',
+            });
+
         });
+    }
+    catch (err) {
+        console.log('Не найден жилет');
+    }
 
-    });
 });
 
 router.get('/product/1', function(req, res, next) {
