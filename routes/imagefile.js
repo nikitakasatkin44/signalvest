@@ -108,6 +108,8 @@ router.get('/vest/:id',function(req, res, next){
                 image: file,
                 user: user,
                 activeLink: 'product_1',
+                updatePriceLink: "/update-vest",
+                updateDescription: "/update-description"
             });
 
         });

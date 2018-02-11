@@ -15,7 +15,7 @@ html(lang="en")
                         if user && user.local.role === 'admin'
                             .editPriceTmplWrapper
                                 .edit-inp.d-none.form-inline
-                                    form(action="/update-vest" method="POST")
+                                    form(action=updatePriceLink method="POST")
                                         .input-group
                                             input.form-control.form-control-lg(placeholder='Сумма' size="5" name="price")
                                             .input-group-btn
@@ -39,7 +39,7 @@ html(lang="en")
                     .col-sm-6
                         #desc-container
                             if user && user.local.role === 'admin'
-                                form(action="/update-description" method="POST")
+                                form(action=updateDescription method="POST")
                                     input(hidden value=image.id name="id")
                                     button#editDescBtn.btn.btn-secondary.float-right.ml-2(type="button")
                                         i.fa.fa-pencil-alt.fa-2x

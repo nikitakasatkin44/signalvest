@@ -95,6 +95,8 @@ router.get('/cloak/:id',function(req, res, next){
                 image: file,
                 user: user,
                 activeLink: 'product_2',
+                updatePriceLink: "/update-cloak",
+                updateDescription: "/update-cloak-description"
             });
 
         });
@@ -125,6 +127,30 @@ router.get('/product/2', function(req, res, next) {
                 })
             })
         })
+});
+
+router.post('/update-cloak', function(req ,res, next) {
+
+    if (req.user.local.role !== 'admin') res.redirect('/');
+
+    const cloakID = req.body.id;
+    const newPrice = req.body.price;
+    Cloak.findByIdAndUpdate(cloakID, { price: newPrice}, function(err, result) {
+        if (err) throw err;
+        console.log(result);
+    });
+    res.redirect('/product/2');
+});
+
+router.post('/update-cloak-description', function(req, res, next) {
+    const cloakID = req.body.id;
+    const newHeader = req.body.headerText;
+    const newDesc = req.body.description;
+    Cloak.findByIdAndUpdate(cloakID, { originalname: newHeader, description: newDesc}, function(err, result) {
+        if (err) throw err;
+        console.log(result);
+    });
+    res.redirect('/product/2');
 });
 
 function isLoggedIn(req, res, next) {
