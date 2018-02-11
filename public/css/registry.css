@@ -1,5 +1,4 @@
 html, body {
-    /*font-family: Montserrat, sans-serif;*/
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -9,7 +8,6 @@ html, body {
 }
 
 #navbar {
-    /*opacity: 0.5;*/
     background-color: rgba(52, 58, 64, 0.7) !important;
 }
 
