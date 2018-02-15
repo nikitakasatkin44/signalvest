@@ -96,7 +96,8 @@ router.get('/cloak/:id',function(req, res, next){
                 user: user,
                 activeLink: 'product_2',
                 updatePriceLink: "/update-cloak",
-                updateDescription: "/update-cloak-description"
+                updateDescription: "/update-cloak-description",
+                title: 'Сигнальные жилеты оптом. Signalvest-kostroma'
             });
 
         });
@@ -120,7 +121,7 @@ router.get('/product/2', function(req, res, next) {
                     activeLink: 'product_2',
                     user: user,
                     action: 'Добавить плащ',
-                    title: 'Плащи',
+                    title: 'Сигнальные жилеты оптом. Signalvest-kostroma',
                     modalTitle: 'Загрузка нового плаща',
                     uploadAction: '/uploadCloak',
                     rootFolder: '/cloak/'

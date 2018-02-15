@@ -1,34 +1,39 @@
-nav.navbar.navbar-expand-sm.bg-dark.navbar-dark.fixed-top#navbar
-    a.navbar-brand(href="/"): span Signalvest
+nav.navbar.navbar-expand-lg.bg-dark.navbar-dark.fixed-top#navbar.navbar-toggleable-md
+    button.navbar-toggler(type="button" data-toggle="collapse" aria-controls="navbarToggler" aria-expanded="false" data-target="#navbarToggler")
+        span.navbar-toggler-icon 123
+    .collapse.navbar-collapse
+        a.navbar-brand(href="/"): span Signalvest
+        ul.navbar-nav.mr-auto
+            li.nav-item: a#index.nav-link(href="/") Главная
+            li.nav-item: a#product_1.nav-link(href="/product/1") Жилеты
+            li.nav-item: a#product_2.nav-link(href="/product/2") Плащи
+            li.nav-item: a#payment.nav-link(href="/payment") Оплата
+            li.nav-item: a#delivery.nav-link(href="/delivery") Доставка
+            li.nav-item: a#contact.nav-link(href="/contact") Контакты
 
-    ul.navbar-nav.mr-auto
-        li.nav-item: a#index.nav-link(href="/") Главная
-        li.nav-item: a#product_1.nav-link(href="/product/1") Жилеты
-        li.nav-item: a#product_2.nav-link(href="/product/2") Плащи
-        li.nav-item: a#payment.nav-link(href="/payment") Оплата
-        li.nav-item: a#delivery.nav-link(href="/delivery") Доставка
-        li.nav-item: a#contact.nav-link(href="/contact") Контакты
+
+
+        ul.navbar-nav.ml-auto
+            if user && user.local.role === 'admin'
+                if action
+                    button#addVestBtn.btn.btn-outline-info.edit-price.float-right.mr-2(data-toggle="modal" data-target="#modalVest")= action
+
+                li.nav-item: button.btn.btn-sm.btn-outline-info#adminBtn: i.fa.fa-cogs.fa-2x
+                //li.nav-item: a#admin.nav-link(href="/admin") Админ
+            if user
+                li.nav-item
+                    a.nav-link(href="/profile") Вы зашли под
+                        |
+                        |
+                        span.user #{user.local.email}
+
+                li.nav-item: a.nav-link(href="/logout") Выход
+            else
+                li.nav-item: a.nav-link(href="/login") Войти
+                li.nav-item: a.nav-link(href="/signup") Регистрация
 
 
 
-    ul.navbar-nav.ml-auto
-        if user && user.local.role === 'admin'
-            if action
-                button#addVestBtn.btn.btn-outline-info.edit-price.float-right.mr-2(data-toggle="modal" data-target="#modalVest")= action
-
-            li.nav-item: button.btn.btn-sm.btn-outline-info#adminBtn: i.fa.fa-cogs.fa-2x
-            //li.nav-item: a#admin.nav-link(href="/admin") Админ
-        if user
-            li.nav-item
-                a.nav-link(href="/profile") Вы зашли под
-                    |
-                    |
-                    span.user #{user.local.email}
-
-            li.nav-item: a.nav-link(href="/logout") Выход
-        else
-            li.nav-item: a.nav-link(href="/login") Войти
-            li.nav-item: a.nav-link(href="/signup") Регистрация
 
     script.
         var tab = document.getElementById("#{activeLink}");

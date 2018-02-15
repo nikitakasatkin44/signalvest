@@ -16,7 +16,7 @@ module.exports = function(app, passport) {
 		res.render('index.pug', {
             user: user,
             activeLink: 'index',
-            title: 'Сигнальные жилеты'
+            title: 'Сигнальные жилеты оптом. Signalvest-kostroma'
 		});
 	});
 
@@ -41,7 +41,7 @@ module.exports = function(app, passport) {
 	app.get('/login', function(req, res) {
 		res.render('login.pug', {
 		    message: req.flash('loginMessage'),
-            title: 'Авторизация'
+            title: 'Авторизация. Сигнальные жилеты оптом'
 		});
 	});
 
@@ -54,7 +54,7 @@ module.exports = function(app, passport) {
 	app.get('/signup', function(req, res) {
 		res.render('signup.pug', {
 		    message: req.flash('signupMessage'),
-            title: 'Регистрация'
+            title: 'Регистрация. Сигнальные жилеты оптом'
 		});
 	});
 
@@ -68,7 +68,7 @@ module.exports = function(app, passport) {
 		res.render('profile.pug', {
 			user : req.user,
             regDate: getdate.curDate(req.user.local.regDate),
-            title: 'Личный профиль'
+            title: 'Личный профиль. Сигнальные жилеты оптом'
 		});
 	});
 
@@ -83,7 +83,7 @@ module.exports = function(app, passport) {
 		res.render('about.pug', {
             user: user,
 			activeLink: 'about',
-            title: 'О компании'
+            title: 'О компании. Сигнальные жилеты оптом'
 		})
     });
 
@@ -93,7 +93,7 @@ module.exports = function(app, passport) {
         res.render('payment.pug', {
             user: user,
             activeLink: 'payment',
-            title: 'Оплата заказа'
+            title: 'Оплата заказа. Сигнальные жилеты оптом'
         })
     });
 
@@ -103,7 +103,7 @@ module.exports = function(app, passport) {
         res.render('delivery.pug', {
             user: user,
             activeLink: 'delivery',
-            title: 'Доставка заказа'
+            title: 'Доставка заказа. Сигнальные жилеты оптом'
         })
     });
 
@@ -113,7 +113,7 @@ module.exports = function(app, passport) {
         res.render('contact.pug', {
             user: user,
             activeLink: 'contact',
-            title: 'Контактные данные'
+            title: 'Контактные данные. Сигнальные жилеты оптом'
         });
     });
 

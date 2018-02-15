@@ -72,7 +72,7 @@ html, body {
 .bg-3 {
     background: url(/img/background/сигнал.png) center;
     width: auto;
-    height: 1500px;
+    min-height: 1500px;
     background-size: 100% 100%;
 }
 

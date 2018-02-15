@@ -109,7 +109,8 @@ router.get('/vest/:id',function(req, res, next){
                 user: user,
                 activeLink: 'product_1',
                 updatePriceLink: "/update-vest",
-                updateDescription: "/update-description"
+                updateDescription: "/update-description",
+                title: 'Сигнальные жилеты оптом'
             });
 
         });
@@ -124,12 +125,6 @@ router.get('/product/1', function(req, res, next) {
     let user = '';
     if (isLoggedIn) {user = req.user}
     const perPage = 30;
-    // const page = Math.max(0, req.param('page'));
-
-    let title;
-    let modalTitle;
-    title = 'Жилеты';
-    modalTitle = 'Загрузка нового жилета';
 
     Image.find()
         .select('originalname path price vestID')
@@ -145,8 +140,8 @@ router.get('/product/1', function(req, res, next) {
                     activeLink: 'product_1',
                     user: user,
                     action: 'Добавить жилет',
-                    title: title,
-                    modalTitle: modalTitle,
+                    title: 'Сигнальные жилеты оптом. Signalvest-kostroma',
+                    modalTitle: 'Загрузка нового жилета',
                     uploadAction: '/uploadPhoto',
                     rootFolder: '/vest/'
                 })
