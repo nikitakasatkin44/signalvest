@@ -4,6 +4,7 @@ html, body {
 
 
 .container {
+    padding-top: 20px;
     max-width: 1500px;
 }
 
@@ -103,6 +104,18 @@ html, body {
     background-color: rgba(212, 212, 212, 1.0);
     top: 45px;
     z-index: 500;
+}
+
+@media(max-width: 1000px) {
+    .line {
+        height: 110px;
+    }
+}
+
+@media(min-width: 1001px) {
+    .line {
+        height: 59px;
+    }
 }
 
 .circle {
