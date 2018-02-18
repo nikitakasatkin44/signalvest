@@ -2,17 +2,17 @@ html, body {
     font-family: 'Open Sans', sans-serif;
 }
 
+
 .container {
-    padding-top: 20px;
-    max-width: 1300px;
+    max-width: 1500px;
 }
 
 #navbar {
-    background-color: rgba(52, 58, 64, 0.7) !important;
+    background-color: rgba(52, 58, 64, 0.3) !important;
 }
 
 #navbar:hover {
-    background-color: rgba(52, 58, 64, 1.0) !important;
+    background-color: rgba(52, 58, 64, 0.8) !important;
 }
 
 .navbar-brand img {
@@ -69,12 +69,21 @@ html, body {
     width: 100%;
 }
 
-.bg-3 {
-    background: url(/img/background/сигнал.png) center;
-    width: auto;
-    min-height: 1500px;
-    background-size: 100% 100%;
+@media(min-width: 1000px) {
+    .bg-desktop {
+        background: url(/img/background/сигнал2.png) center;
+        width: auto;
+        height: 700px;
+        background-size: 100% 100%;
+    }
 }
+@media(max-width: 1000px) {
+    .bg-mobile {
+        background-color: rgba(62, 114, 179, 0.42)
+        /*background: url(/img/background/сигнал.png) center;*/
+    }
+}
+
 
 .white-list {
     background: rgba(255, 255, 255, 0.85);
@@ -306,27 +315,37 @@ footer a {
     position: relative;
 }
 
-.left-header {
-    font-family: 'PT Sans', sans-serif;
-    color: white;
-    font-size: 2.5rem;
-    position: absolute;
-    left: 37px;
-    top: 30px;
-}
+/*.left-header {*/
+    /*font-family: 'PT Sans', sans-serif;*/
+    /*color: white;*/
+    /*font-size: 2.5rem;*/
+    /*position: absolute;*/
+    /*left: 37px;*/
+    /*top: 30px;*/
+/*}*/
 
 .center-caption {
     font-family: 'Open Sans', sans-serif;
     font-size: 1.2rem;
 }
 
-.center-caption img{
-    object-fit: contain;
+/*.center-caption img{*/
+    /*object-fit: contain;*/
+/*}*/
+
+@media(max-width: 900px) {
+    .subsection-1 {
+        padding-top: 50px;
+    }
 }
 
-.subsection-1 {
-    height: 600px;
+@media(min-width: 900px) {
+    .subsection-1 {
+        height: 600px;
+    }
 }
+
+
 
 .center-text {
     line-height: 1.8rem;
@@ -337,4 +356,14 @@ footer a {
 pre {
     font-family: 'Open Sans', sans-serif;
     font-size: 1.2rem;
+}
+
+.desktop-h1 {
+    position: relative;
+    left: -90px;
+    top: -77px;
+}
+
+.card-index-header {
+    background-color: rgb(181, 180, 177)
 }
