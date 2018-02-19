@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c1103e0-1e59-4f7b-8312-156d01a7bb39" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/cloaks/comfort_sop.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/good/300x300/Жилет-«Эконом».png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/img/cloaks/300x300/comfort_sop4.png" afterPath="$PROJECT_DIR$/public/img/cloaks/300x300/comfort_sop.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/registry.css" afterPath="$PROJECT_DIR$/public/css/registry.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.pug" afterPath="$PROJECT_DIR$/views/index.pug" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -20,17 +18,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.pug" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.pug" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/index.pug">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="37" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="37" />
+            <state relative-caret-position="102">
+              <caret line="30" column="78" lean-forward="true" selection-start-line="30" selection-start-column="78" selection-end-line="30" selection-end-column="78" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="registry.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="registry.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/registry.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="332">
@@ -39,6 +37,13 @@
                 <marker date="1519068961028" expanded="false" signature="5402:5457" ph="..." />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="comfort_sop.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/img/cloaks/300x300/comfort_sop.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
@@ -170,8 +175,8 @@
         <option value="$PROJECT_DIR$/views/includes/navbar.pug" />
         <option value="$PROJECT_DIR$/views/delivery.pug" />
         <option value="$PROJECT_DIR$/views/product.pug" />
-        <option value="$PROJECT_DIR$/views/index.pug" />
         <option value="$PROJECT_DIR$/public/css/registry.css" />
+        <option value="$PROJECT_DIR$/views/index.pug" />
       </list>
     </option>
   </component>
@@ -449,7 +454,7 @@
       <workItem from="1518636954390" duration="3000" />
       <workItem from="1518715308053" duration="2198000" />
       <workItem from="1518975169429" duration="9489000" />
-      <workItem from="1519062600641" duration="6427000" />
+      <workItem from="1519062600641" duration="6573000" />
     </task>
     <task id="LOCAL-00001" summary="28.01">
       <created>1517161396618</created>
@@ -710,11 +715,25 @@
       <option name="project" value="LOCAL" />
       <updated>1518985192745</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="19.02 more mobile design!">
+      <created>1519069044391</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1519069044392</updated>
+    </task>
+    <task id="LOCAL-00039" summary="19.02 more mobile design!">
+      <created>1519069061259</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1519069061259</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="350681000" />
+    <option name="totallyTimeSpent" value="350827000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -760,7 +779,8 @@
     <MESSAGE value="11.02 error handling for vests" />
     <MESSAGE value="11.02 edit cloaks repair" />
     <MESSAGE value="18.02 first steps to mobile design" />
-    <option name="LAST_COMMIT_MESSAGE" value="18.02 first steps to mobile design" />
+    <MESSAGE value="19.02 more mobile design!" />
+    <option name="LAST_COMMIT_MESSAGE" value="19.02 more mobile design!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1052,14 +1072,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/index.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="37" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/img/cloaks/300x300/comfort_sop1.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1075,11 +1087,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/img/cloaks/300x300/comfort_sop4.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/registry.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="332">
@@ -1087,6 +1094,19 @@
           <folding>
             <marker date="1519068961028" expanded="false" signature="5402:5457" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/img/cloaks/300x300/comfort_sop.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="30" column="78" lean-forward="true" selection-start-line="30" selection-start-column="78" selection-end-line="30" selection-end-column="78" />
+          <folding />
         </state>
       </provider>
     </entry>
