@@ -8,30 +8,52 @@ html(lang="en")
         include includes/navbar
 
         .bg-desktop
-        .container.bg-mobile
+        .container.bg-mobile.index-container
             h1.text-center.desktop-h1.d-sm-none.d-lg-block(style="font-size: 4rem; font-family: 'PT Sans', sans-serif;") SignalVest
 
-            .row.col-md-12(style="padding-top: 70px;")
-                .card
-                    .card-header.card-index-header
-                        h3 Безопасность
-                    .card-body
-                        p Жилет сигнальный светоотражающий – это необходимый атрибут рабочей формы, который незаменим для деятельности в условиях недостаточной видимости. Светоотражающие сигнальные жилеты обезопасят жизнь работника, сделав видимым в любых условиях.
+            .row
+                .col-lg-3.col-md-6
+                    div.img-thumbnail
+                        a(href="/product/1")
+                            img(src="/img/good/300x300/Жилет-«Эконом».png")
 
-            .row.pt-5.col-md-12
-                .card
-                    .card-header.card-index-header
-                            h3 Качество
-                    .card-body
-                            p При пошиве сигнальных жилетов используются материалы высокого качества, которые не побледнеют после стирки, а в светоотражающих элементах не разрушится верхний отражающий слой.
+                .col-md-6.d-lg-none.pb-md-3
+                    div.img-thumbnail
+                        a(href="/product/2")
+                            img(src="/img/cloaks/300x300/comfort_sop4.png")
 
-            .row.pt-5.pb-3.col-md-12
-                .card
-                    .card-header.card-index-header
-                        h3 Стандарты
-                    .card-body
-                        p При пошиве сигнальных жилетов используются материалы высокого качества, которые не побледнеют после стирки, а в светоотражающих элементах не разрушится верхний отражающий слой.
 
+                .col-md-12.col-lg-6
+                    .card.mb-5
+                        .card-header
+                            ul.nav.nav-tabs.nav-justified.card-header-tabs(role="tablist")
+                                li.nav-item
+                                    a.nav-link.active(href="#menu0" data-toggle="tab") Безопасность
+                                li.nav-item
+                                    a.nav-link(href="#menu1" data-toggle="tab") Качество
+                                li.nav-item
+                                    a.nav-link(href="#menu2" data-toggle="tab") Стандарты
+                                li.nav-item
+                                    a.nav-link(href="#menu3" data-toggle="tab") Удобство
+
+                        .card-body(style="height: 252px;")
+                            .tab-content
+                                #menu0.tab-pane.active
+                                    p Жилет сигнальный светоотражающий – это необходимый атрибут рабочей формы, который незаменим для деятельности в условиях недостаточной видимости. Светоотражающие сигнальные жилеты обезопасят жизнь работника, сделав видимым в любых условиях.
+
+                                #menu1.tab-pane.fade
+                                    p При пошиве сигнальных жилетов используются материалы высокого качества, которые не побледнеют после стирки, а в светоотражающих элементах не разрушится верхний отражающий слой.
+
+                                #menu2.tab-pane.fade
+                                    p Все модели сигнальных жилетов сертифицированы по европейскому стандарту EN471 и ГОСТ Р12.4219-99 и относятся ко второму классу защиты.
+
+                                #menu3.tab-pane.fade
+                                    p Вы можете выбрать любую удобную для Вас форму оплаты заказа. Мы работаем как с предприятиями, так и с частными лицами. Будем рады сотрудничать с рекламными агенствами.
+
+                .col-lg-3.d-none.d-lg-block.pb-3
+                    div.img-thumbnail
+                        a(href="/product/2")
+                            img(src="/img/cloaks/300x300/comfort_sop.png")
 
 
 

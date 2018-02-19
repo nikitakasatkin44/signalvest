@@ -8,6 +8,19 @@ html, body {
     max-width: 1500px;
 }
 
+.index-container {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.img-thumbnail {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.img-thumbnail:hover {
+    background-color: rgba(220, 220, 220, 1);
+}
+
 #navbar {
     background-color: rgba(52, 58, 64, 0.3) !important;
 }
@@ -74,13 +87,14 @@ html, body {
     .bg-desktop {
         background: url(/img/background/сигнал2.png) center;
         width: auto;
-        height: 700px;
+        height: 800px;
         background-size: 100% 100%;
     }
 }
 @media(max-width: 1000px) {
     .bg-mobile {
-        background-color: rgba(62, 114, 179, 0.42)
+        background-color: rgba(62, 114, 179, 0.42);
+        height: 700px;
         /*background: url(/img/background/сигнал.png) center;*/
     }
 }
@@ -373,8 +387,8 @@ pre {
 
 .desktop-h1 {
     position: relative;
-    left: -90px;
-    top: -77px;
+    left: -104px;
+    top: -101px;
 }
 
 .card-index-header {
