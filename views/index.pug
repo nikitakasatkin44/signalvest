@@ -7,93 +7,62 @@ html(lang="en")
     body
         include includes/navbar
 
-        .bg-desktop
-        .container.bg-mobile.index-container
-            h1.text-center.desktop-h1.d-sm-none.d-lg-block(style="font-size: 4rem; font-family: 'PT Sans', sans-serif;") SignalVest
+        .wrapper
+            .bg-desktop.d-none.d-lg-block
+                img.index-background(src='img/background/сигнал6.png')
+            .container.bg-mobile.index-container
+                h1.text-center.desktop-h1.d-sm-none.d-lg-block SignalVest
 
-            .row
-                .col-lg-3.col-md-6
-                    div.img-thumbnail
-                        a(href="/product/1")
-                            img(src="/img/good/300x300/Жилет-«Эконом».png")
-
-                .col-md-6.d-lg-none.pb-md-3
-                    div.img-thumbnail
-                        a(href="/product/2")
-                            img(src="/img/cloaks/300x300/comfort_sop.png")
+                .row
+                    .col-lg-3.col-md-6
+                        div.img-thumbnail
+                            a(href="/product/1")
+                                img.index-background(src="/img/good/300x300/Жилет-«Эконом».png" alt="Жилеты")
 
 
-                .col-md-12.col-lg-6
-                    .card.mb-5
-                        .card-header
-                            ul.nav.nav-tabs.nav-justified.card-header-tabs(role="tablist")
-                                li.nav-item
-                                    a.nav-link.active(href="#menu0" data-toggle="tab") Безопасность
-                                li.nav-item
-                                    a.nav-link(href="#menu1" data-toggle="tab") Качество
-                                li.nav-item
-                                    a.nav-link(href="#menu2" data-toggle="tab") Стандарты
-                                li.nav-item
-                                    a.nav-link(href="#menu3" data-toggle="tab") Удобство
+                    .col-md-6.d-lg-none.pb-md-3
+                        div.img-thumbnail
+                            a(href="/product/2")
+                                img.index-background(src="/img/cloaks/300x300/comfort_sop2.png" alt="Плащи")
 
-                        .card-body(style="height: 252px;")
-                            .tab-content
-                                #menu0.tab-pane.active
-                                    p Жилет сигнальный светоотражающий – это необходимый атрибут рабочей формы, который незаменим для деятельности в условиях недостаточной видимости. Светоотражающие сигнальные жилеты обезопасят жизнь работника, сделав видимым в любых условиях.
+                    .col-md-12.col-lg-6
+                        div
+                            .card.mb-5(style="height: 100%;")
+                                .card-header
+                                    ul.nav.nav-tabs.nav-justified.card-header-tabs(role="tablist")
+                                        li.nav-item
+                                            a.nav-link.active(href="#menu0" data-toggle="tab") Безопасность
+                                        li.nav-item
+                                            a.nav-link(href="#menu1" data-toggle="tab") Качество
+                                        li.nav-item
+                                            a.nav-link(href="#menu2" data-toggle="tab") Стандарты
+                                        li.nav-item
+                                            a.nav-link(href="#menu3" data-toggle="tab") Удобство
 
-                                #menu1.tab-pane.fade
-                                    p При пошиве сигнальных жилетов используются материалы высокого качества, которые не побледнеют после стирки, а в светоотражающих элементах не разрушится верхний отражающий слой.
+                                .card-body
+                                    .tab-content
+                                        #menu0.tab-pane.active
+                                            p Жилет сигнальный светоотражающий – это необходимый атрибут рабочей формы, который незаменим для деятельности в условиях недостаточной видимости. Светоотражающие сигнальные жилеты обезопасят жизнь работника, сделав видимым в любых условиях.
 
-                                #menu2.tab-pane.fade
-                                    p Все модели сигнальных жилетов сертифицированы по европейскому стандарту EN471 и ГОСТ Р12.4219-99 и относятся ко второму классу защиты.
+                                        #menu1.tab-pane.fade
+                                            p При пошиве сигнальных жилетов используются материалы высокого качества, которые не побледнеют после стирки, а в светоотражающих элементах не разрушится верхний отражающий слой.
 
-                                #menu3.tab-pane.fade
-                                    p Вы можете выбрать любую удобную для Вас форму оплаты заказа. Мы работаем как с предприятиями, так и с частными лицами. Будем рады сотрудничать с рекламными агенствами.
+                                        #menu2.tab-pane.fade
+                                            p Все модели сигнальных жилетов сертифицированы по европейскому стандарту EN471 и ГОСТ Р12.4219-99 и относятся ко второму классу защиты.
 
-                .col-lg-3.d-none.d-lg-block.pb-3
-                    div.img-thumbnail
-                        a(href="/product/2")
-                            img(src="/img/cloaks/300x300/comfort_sop.png")
-
-
-
+                                        #menu3.tab-pane.fade
+                                            p Вы можете выбрать любую удобную для Вас форму оплаты заказа. Мы работаем как с предприятиями, так и с частными лицами. Будем рады сотрудничать с рекламными агенствами.
 
 
+                    .col-lg-3.d-none.d-lg-block.pb-3
+                        div
+                            div.img-thumbnail
+                                a(href="/product/2")
+                                    img.index-background(src="/img/cloaks/300x300/comfort_sop2.png")
+
+            .push
 
 
-
-
-
-        //.bg-3.col-sm-12
-        //    .subsection-1
-        //    h1.main-header SignalVest
-        //
-        //    .row.pt-5
-        //        .col-lg-3.col-md-12
-        //            .center-caption
-        //                h2.left-header Безопасность
-        //
-        //        .col-lg-7.col-md-12.offset-sm-2.center-text
-        //            p Жилет сигнальный светоотражающий – это необходимый атрибут рабочей формы, который незаменим для деятельности в условиях недостаточной видимости. Светоотражающие сигнальные жилеты обезопасят жизнь работника, сделав видимым в любых условиях.
-        //
-        //
-        //    .row.pt-5
-        //        .col-sm-3
-        //            .center-caption
-        //                img.float-left.d-none.d-lg-block(src="img/background/item.png" style="width: 360px; height: 125px")
-        //                h2.left-header Качество
-        //
-        //        .col-sm-7.offset-sm-2.center-text
-        //            p При пошиве сигнальных жилетов используются материалы высокого качества, которые не побледнеют после стирки, а в светоотражающих элементах не разрушится верхний отражающий слой.
-        //
-        //    .row.pt-5
-        //        .col-sm-3
-        //            .center-caption
-        //                img.float-left.d-none.d-lg-block(src="img/background/item.png" style="width: 360px; height: 125px")
-        //                h2.left-header Стандарты
-        //
-        //        .col-sm-7.offset-sm-2.center-text
-        //            p При пошиве сигнальных жилетов используются материалы высокого качества, которые не побледнеют после стирки, а в светоотражающих элементах не разрушится верхний отражающий слой.
 
         include includes/footer
 
