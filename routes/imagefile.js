@@ -35,6 +35,9 @@ const imagePath = mongoose.Schema({
     },
     composition: {
         type: String
+    },
+    serial: {
+        type: Number
     }
 });
 
@@ -127,10 +130,10 @@ router.get('/product/1', function(req, res, next) {
     const perPage = 30;
 
     Image.find()
-        .select('originalname path price vestID')
+        .select('originalname path price vestID serial')
         .limit(perPage)
         .sort({
-            originalname: 'asc'
+            serial: 'asc'
         })
         .exec(function(err, vests) {
             Image.count().exec(function(err, count) {
@@ -207,7 +210,13 @@ router.post('/update-description', function(req, res, next) {
     const vestID = req.body.id;
     const newHeader = req.body.headerText;
     const newDesc = req.body.description;
-    Image.findByIdAndUpdate(vestID, { originalname: newHeader, description: newDesc}, function(err, result) {
+    const newSerial = req.body.serial;
+    Image.findByIdAndUpdate(vestID, {
+        originalname: newHeader,
+        description: newDesc,
+        serial: newSerial
+        },
+        function(err, result) {
         if (err) throw err;
         console.log(result);
     });

@@ -51,11 +51,18 @@ html(lang="en")
                                             input#editHeader.form-control.form-control-lg(name="headerText" value=image.originalname)
                                         .col-sm-12.mt-3
                                             textarea#editComposition.form-control.form-control-lg(name="description" rows=10)=image.description
+                                        .mt-3.form-inline
+                                            .form-group
+                                                label(for="vestID") Номер жилета: &nbsp
+                                                input.col-sm-2#editID.form-control.form-control-lg(name="serial" value=image.serial)
+
+
 
 
                             #viewTmpl
                                 h1#descHeaderInp.text-left= image.originalname
                                 pre#CompInp.d-inline= image.description
+                                h2(style="position: absolute; bottom: 0px; right: 20px;")= image.serial
 
         include includes/footer
 

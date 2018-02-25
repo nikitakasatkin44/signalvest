@@ -2,12 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c1103e0-1e59-4f7b-8312-156d01a7bb39" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/cloaks/comfort_sop.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/cloaks/n1_price.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/cloaks/n2_price.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/cloaks/n3_price.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/cloaks/n4_price.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/cloaks/standart_sop.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/Жилет «Эконом-3».png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/Жилет «Эконом».png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/Жилет сигнальный (тип 1).png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/Жилет сигнальный (тип 1Н).png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/Жилет сигнальный (тип 2).png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/Жилет сигнальный (тип 2Н).png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/Жилет сигнальный (тип 3).png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/Жилет сигнальный (тип 3Н).png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/Жилет сигнальный (тип 4).png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/Жилет сигнальный (тип 6).png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/Накидка сигнальная.png" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/cloaks/cat.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/about.pug" afterPath="$PROJECT_DIR$/views/about.pug" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/delivery.pug" afterPath="$PROJECT_DIR$/views/delivery.pug" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/includes/head.pug" afterPath="$PROJECT_DIR$/views/includes/head.pug" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/imagefile.js" afterPath="$PROJECT_DIR$/routes/imagefile.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/product.pug" afterPath="$PROJECT_DIR$/views/product.pug" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/signup.pug" afterPath="$PROJECT_DIR$/views/signup.pug" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/vest.pug" afterPath="$PROJECT_DIR$/views/vest.pug" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -22,21 +37,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="head.pug" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/includes/head.pug">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="28" lean-forward="true" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="43" lean-forward="true" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
+            <state relative-caret-position="306">
+              <caret line="18" column="54" lean-forward="true" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -56,8 +61,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.main-header</find>
-      <find>center-caption</find>
       <find>text-left</find>
       <find>CompInp</find>
       <find>update</find>
@@ -86,6 +89,8 @@
       <find>footer</find>
       <find>.bg-mobile</find>
       <find>.line</find>
+      <find>align-text-bottom</find>
+      <find>/update-description</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -158,20 +163,20 @@
         <option value="$PROJECT_DIR$/public/js/addCloak.js" />
         <option value="$PROJECT_DIR$/log/access.log" />
         <option value="$PROJECT_DIR$/config/passport.js" />
-        <option value="$PROJECT_DIR$/routes/imagefile.js" />
         <option value="$PROJECT_DIR$/auth/routes.js" />
         <option value="$PROJECT_DIR$/routes/cloak.js" />
         <option value="$PROJECT_DIR$/views/navbar.html" />
         <option value="$PROJECT_DIR$/views/includes/navbar.pug" />
         <option value="$PROJECT_DIR$/views/index.pug" />
         <option value="$PROJECT_DIR$/public/css/registry.css" />
-        <option value="$PROJECT_DIR$/config/database.js" />
         <option value="$PROJECT_DIR$/views/delivery.pug" />
         <option value="$PROJECT_DIR$/views/about.pug" />
-        <option value="$PROJECT_DIR$/views/vest.pug" />
         <option value="$PROJECT_DIR$/views/signup.pug" />
-        <option value="$PROJECT_DIR$/views/product.pug" />
         <option value="$PROJECT_DIR$/views/includes/head.pug" />
+        <option value="$PROJECT_DIR$/config/database.js" />
+        <option value="$PROJECT_DIR$/views/product.pug" />
+        <option value="$PROJECT_DIR$/views/vest.pug" />
+        <option value="$PROJECT_DIR$/routes/imagefile.js" />
       </list>
     </option>
   </component>
@@ -231,52 +236,7 @@
             <path>
               <item name="signalvest" type="b2602c69:ProjectViewProjectNode" />
               <item name="signalvest" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="signalvest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="signalvest" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="signalvest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="signalvest" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="signalvest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="signalvest" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="signalvest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="signalvest" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="signalvest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="signalvest" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
-              <item name="good" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="signalvest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="signalvest" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="signalvest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="signalvest" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="signalvest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="signalvest" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="includes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -301,19 +261,19 @@
     <property name="node.js.selected.package.stylelint" value="" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\deploy\signalvest\public\cloaks" />
+      <recent name="C:\deploy\signalvest\public\uploads" />
+      <recent name="C:\deploy\signalvest\public\img\background" />
+      <recent name="C:\deploy\signalvest\public\img\cloaks\300x300" />
+      <recent name="C:\deploy\signalvest\public\img\good\300x300" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\deploy\signalvest\public\css\old" />
       <recent name="C:\deploy\signalvest\public\js" />
       <recent name="C:\deploy\signalvest\model" />
       <recent name="C:\deploy\signalvest\trash" />
       <recent name="C:\deploy\signalvest\auth" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\deploy\signalvest\public\img\background" />
-      <recent name="C:\deploy\signalvest\public\img\cloaks\300x300" />
-      <recent name="C:\deploy\signalvest\public\img\good\300x300" />
-      <recent name="C:\deploy\signalvest\public\img\cloaks" />
-      <recent name="C:\deploy\signalvest\public\css" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -422,7 +382,7 @@
       <workItem from="1519230375027" duration="841000" />
       <workItem from="1519373718031" duration="6123000" />
       <workItem from="1519463137408" duration="6815000" />
-      <workItem from="1519542909470" duration="1947000" />
+      <workItem from="1519542909470" duration="5713000" />
     </task>
     <task id="LOCAL-00001" summary="28.01">
       <created>1517161396618</created>
@@ -725,11 +685,18 @@
       <option name="project" value="LOCAL" />
       <updated>1519467191241</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="25.02 metrika-yandex.ru">
+      <created>1519546469154</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1519546469155</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="368244000" />
+    <option name="totallyTimeSpent" value="372010000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -777,7 +744,8 @@
     <MESSAGE value="18.02 first steps to mobile design" />
     <MESSAGE value="19.02 more mobile design!" />
     <MESSAGE value="24.02 more mobile design!" />
-    <option name="LAST_COMMIT_MESSAGE" value="24.02 more mobile design!" />
+    <MESSAGE value="25.02 metrika-yandex.ru" />
+    <option name="LAST_COMMIT_MESSAGE" value="25.02 metrika-yandex.ru" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -818,12 +786,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/routes/imagefile.js</url>
-          <line>206</line>
+          <line>209</line>
           <option name="timeStamp" value="107" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/routes/imagefile.js</url>
-          <line>57</line>
+          <line>60</line>
           <option name="timeStamp" value="119" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -843,20 +811,6 @@
     <find-history />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/trash/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/navbar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/bootstrap-grid.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
@@ -966,14 +920,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="573" column="17" lean-forward="true" selection-start-line="573" selection-start-column="17" selection-end-line="573" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/img/good/300x300/Жилет-«Эконом».png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1010,13 +956,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/imagefile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2210">
-          <caret line="130" column="23" lean-forward="false" selection-start-line="130" selection-start-column="23" selection-end-line="130" selection-end-column="23" />
           <folding />
         </state>
       </provider>
@@ -1049,14 +988,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/database.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="2" lean-forward="true" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/auth/routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -1069,14 +1000,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/product.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="60" column="28" lean-forward="false" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -1129,14 +1052,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/vest.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="613">
-          <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/signup.pug">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
@@ -1153,18 +1068,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
+    <entry file="file://$PROJECT_DIR$/views/includes/head.pug">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="43" lean-forward="true" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
+        <state relative-caret-position="289">
+          <caret line="17" column="28" lean-forward="false" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/includes/head.pug">
+    <entry file="file://$PROJECT_DIR$/config/passport.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="28" lean-forward="true" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="5656" column="1" lean-forward="true" selection-start-line="5656" selection-start-column="1" selection-end-line="5656" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/product.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="8" column="31" lean-forward="true" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/mongoose/lib/error/cast.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="25" column="10" lean-forward="false" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/database.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="2" lean-forward="true" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/vest.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/imagefile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="137" column="36" lean-forward="true" selection-start-line="137" selection-start-column="36" selection-end-line="137" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="54" lean-forward="true" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
           <folding />
         </state>
       </provider>
