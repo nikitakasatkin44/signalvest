@@ -25,6 +25,7 @@
 #desc-container {
     padding-left: 1rem;
     padding-right: 1rem;
+    width: 100%;
 }
 
 @media(max-width: 300px) {

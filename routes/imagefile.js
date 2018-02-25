@@ -132,6 +132,8 @@ router.get('/vest/:vestID',function(req, res, next){
                         let user = '';
                         if (isLoggedIn) {user = req.user}
 
+                        const descArray = file.description.split("\r\n");
+
                         res.render("vest.pug",{
                             image: file,
                             user: user,
@@ -140,7 +142,8 @@ router.get('/vest/:vestID',function(req, res, next){
                             updateDescription: "/update-description",
                             title: 'Сигнальные жилеты оптом',
                             isFirstVest: file.vestID <= 1,
-                            isLastVest: count <= file.vestID
+                            isLastVest: count <= file.vestID,
+                            desc: descArray
                         });
                     })
                 }
@@ -153,13 +156,6 @@ router.get('/vest/:vestID',function(req, res, next){
                 console.log('Не найден жилет');
             }
         });
-
-
-
-
-
-
-
 });
 
 router.get('/product/1', function(req, res, next) {

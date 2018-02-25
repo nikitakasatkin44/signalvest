@@ -4,6 +4,9 @@ html(lang="en")
     script(src="/js/editVest.js")
     link(href="/css/vest.css" rel="stylesheet")
 
+    script.
+        const descriptionText = "#{image.description}".replace("\\r\\n", "<br>")
+
     body
         include includes/navbar
 
@@ -57,9 +60,10 @@ html(lang="en")
                                                     label(for="vestID") Номер жилета: &nbsp
                                                     input.col-sm-2#editID.form-control.form-control-lg(name="newVestID" value=image.vestID)
 
-                                #viewTmpl(style="word-wrap: break-word;")
+                                #viewTmpl
                                     h1#descHeaderInp.text-left= image.originalname
-                                    p#CompInp.d-inline= image.description
+                                    for descRow in desc
+                                        p.mb-0=descRow
                                     span#serial.d-none.d-lg-block= image.vestID
 
                         .row.mt-md-5(style="height: 80px")
