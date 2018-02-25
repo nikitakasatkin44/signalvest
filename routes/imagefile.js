@@ -167,7 +167,7 @@ router.get('/product/1', function(req, res, next) {
         .select('originalname path price vestID serial')
         .limit(perPage)
         .sort({
-            serial: 'asc'
+            vestID: 'asc'
         })
         .exec(function(err, vests) {
             Image.count().exec(function(err, count) {

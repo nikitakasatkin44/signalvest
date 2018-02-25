@@ -115,7 +115,7 @@ router.get('/product/2', function(req, res, next) {
 
     Cloak.find()
         .select('originalname path price vestID')
-        .sort({originalname: 'asc'})
+        .sort({vestID: 'asc'})
         .exec(function(err, cloaks) {
             Cloak.count().exec(function(err, count) {
                 res.render('product.pug', {
