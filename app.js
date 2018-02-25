@@ -50,14 +50,14 @@ app.use(express.static('public/uploads'));
 
 const routes = require('./routes/imagefile');
 
-// app.use(function(error, req, res, next) {
-//     let err;
-//     if (error.error_text) err = error.error_text;
-//     res.render('error.pug', {
-//         error_text: err,
-//         message: error.message
-//     })
-// });
+app.use(function(error, req, res, next) {
+    let err;
+    if (error.error_text) err = error.error_text;
+    res.render('error.pug', {
+        error_text: err,
+        message: error.message
+    })
+});
 
 app.listen(port, () => {
     console.log(`App listening on port ${port}`)

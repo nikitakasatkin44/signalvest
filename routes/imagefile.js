@@ -119,29 +119,35 @@ router.get('/vest/:vestID',function(req, res, next){
     //
     //     });
     // }
-    try {
-        Image.findOne({ vestID: req.params.vestID }).exec((err, file) => {
-            if (err) {
-                err.error_text = 'Не существует жилета с тамим идентификатором';
-                return next(err);
-            }
+    Image.count().exec(function(err, count) {
+        try {
+            Image.findOne({ vestID: req.params.vestID }).exec((err, file) => {
+                if (err) {
+                    err.error_text = 'Не существует жилета с тамим идентификатором';
+                    return next(err);
+                }
 
-            let user = '';
-            if (isLoggedIn) {user = req.user}
+                let user = '';
+                if (isLoggedIn) {user = req.user}
 
-            res.render("vest.pug",{
-                image: file,
-                user: user,
-                activeLink: 'product_1',
-                updatePriceLink: "/update-vest",
-                updateDescription: "/update-description",
-                title: 'Сигнальные жилеты оптом',
-            });
-        })
-    }
-    catch (err) {
-        console.log('Не найден жилет');
-    }
+                res.render("vest.pug",{
+                    image: file,
+                    user: user,
+                    activeLink: 'product_1',
+                    updatePriceLink: "/update-vest",
+                    updateDescription: "/update-description",
+                    title: 'Сигнальные жилеты оптом',
+                    isLastVest: count <= file.vestID
+                });
+            })
+        }
+        catch (err) {
+            console.log('Не найден жилет');
+        }
+    });
+
+
+
 
 });
 
