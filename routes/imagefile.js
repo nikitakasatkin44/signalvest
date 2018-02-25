@@ -97,13 +97,35 @@ router.post('/uploadPhoto', isLoggedIn, upload.any(), function(req, res, next) {
     res.redirect('/product/1');
 });
 
-router.get('/vest/:id',function(req, res, next){
+router.get('/vest/:vestID',function(req, res, next){
+    // try {
+    //     Image.findById(req.params.id, function(err, file){
+    //         if (err) {
+    //             err.error_text = 'Не существует жилета с тамим идентификатором';
+    //             return next(err);
+    //         }
+    //         let user = '';
+    //         if (isLoggedIn) {user = req.user}
+    //
+    //         res.render("vest.pug",{
+    //             image: file,
+    //             user: user,
+    //             activeLink: 'product_1',
+    //             updatePriceLink: "/update-vest",
+    //             updateDescription: "/update-description",
+    //             title: 'Сигнальные жилеты оптом',
+    //             currentVestID:
+    //         });
+    //
+    //     });
+    // }
     try {
-        Image.findById(req.params.id, function(err, file){
+        Image.findOne({ vestID: req.params.vestID }).exec((err, file) => {
             if (err) {
                 err.error_text = 'Не существует жилета с тамим идентификатором';
                 return next(err);
             }
+
             let user = '';
             if (isLoggedIn) {user = req.user}
 
@@ -113,10 +135,9 @@ router.get('/vest/:id',function(req, res, next){
                 activeLink: 'product_1',
                 updatePriceLink: "/update-vest",
                 updateDescription: "/update-description",
-                title: 'Сигнальные жилеты оптом'
+                title: 'Сигнальные жилеты оптом',
             });
-
-        });
+        })
     }
     catch (err) {
         console.log('Не найден жилет');

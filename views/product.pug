@@ -16,7 +16,7 @@ html(lang="en")
 
                     for image in images
                         .col-sm-12.col-md-6.col-lg-4.vest-wrapper
-                            a(href=rootFolder + image.id)
+                            a(href=rootFolder + image.serial)
                                 img.vest-image(src=image.path alt=image.originalname)
                             br
                             p.font-weight-bold.text-center.d-inline.pl-4= image.originalname
