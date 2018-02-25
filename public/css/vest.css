@@ -22,6 +22,11 @@
     right: 70px;
 }
 
+#desc-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
 @media(max-width: 300px) {
     .circle-text-big {
         font-size: 1.5rem;
