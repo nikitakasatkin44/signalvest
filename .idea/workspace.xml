@@ -40,8 +40,8 @@
       <file leaf-file-name="vest.pug" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/vest.pug">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="69" column="78" lean-forward="true" selection-start-line="69" selection-start-column="78" selection-end-line="69" selection-end-column="78" />
+            <state relative-caret-position="338">
+              <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -411,14 +411,7 @@
       <workItem from="1519230375027" duration="841000" />
       <workItem from="1519373718031" duration="6123000" />
       <workItem from="1519463137408" duration="6815000" />
-      <workItem from="1519542909470" duration="12469000" />
-    </task>
-    <task id="LOCAL-00005" summary="01.02">
-      <created>1517644184950</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1517644184951</updated>
+      <workItem from="1519542909470" duration="12664000" />
     </task>
     <task id="LOCAL-00006" summary="03.02">
       <created>1517666211824</created>
@@ -756,11 +749,18 @@
       <option name="project" value="LOCAL" />
       <updated>1519558165503</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="25.02 serial numbers added to vests">
+      <created>1519558241611</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1519558241611</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="378766000" />
+    <option name="totallyTimeSpent" value="378961000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1210,8 +1210,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/vest.pug">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="69" column="78" lean-forward="true" selection-start-line="69" selection-start-column="78" selection-end-line="69" selection-end-column="78" />
+        <state relative-caret-position="338">
+          <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
           <folding />
         </state>
       </provider>
