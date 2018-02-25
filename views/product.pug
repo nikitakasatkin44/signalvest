@@ -68,26 +68,5 @@ html(lang="en")
             $('#modalVest').modal('hide');
         })
 
-        var prevPage = #{current} - 1
-        var nextPage = #{current} + 1
-        var prevPageHref = '/product/' + prevPage
-        var nextPageHref = '/product/' + nextPage
-        var count = #{pages}
-        var isNext = count >= nextPage
-        var isPrev = 1 <= prevPage
-
-        if (!isNext) {
-            document.getElementById('nextPage').className += " disabled";
-        }
-
-        if (!isPrev) {
-            document.getElementById('prevPage').className += " disabled";
-        }
-
-        var x = document.getElementById('prevPage')
-        var y = document.getElementById('nextPage')
-        x.setAttribute('href', prevPageHref)
-        y.setAttribute('href', nextPageHref)
-
 
 
