@@ -22,10 +22,55 @@
     right: 70px;
 }
 
+@media(max-width: 300px) {
+    .circle-text-big {
+        font-size: 1.5rem;
+    }
+
+    .editPriceTmpl {
+        width: 150px;
+    }
+}
+
+@media(min-width: 301px) {
+    .circle-text-big {
+        font-size: 2rem;
+    }
+
+    .editPriceTmpl {
+        height: 40px;
+        width: 140px;
+    }
+}
+
+@media(min-width: 601px) {
+    .circle-text-big {
+        font-size: 3rem;
+    }
+
+    .editPriceTmpl {
+        height: 40px;
+        width: 206px;
+    }
+}
+
+@media(min-width: 770px) {
+    .circle-text-big {
+        font-size: 3rem;
+    }
+
+    .editPriceTmpl {
+        height: 50px;
+        width: 206px;
+    }
+
+    .priceTmplWrapper {
+        right: 132px;
+    }
+}
+
 .editPriceTmpl {
     position: absolute;
-    height: 50px;
-    width: 206px;
     display: table-cell;
     text-align: center;
     vertical-align: middle;
@@ -42,7 +87,6 @@
 }
 
 .circle-text-big {
-    font-size: 3rem;
     position: absolute;
     bottom: -8px;
     left: 10px
@@ -72,3 +116,15 @@
     bottom: 0;
     right: 20px;
 }
+
+/*@media(max-width: 500px) {*/
+    /*.pagination {*/
+        /*padding-top: 100px;*/
+    /*}*/
+/*}*/
+
+/*@media(max-width: 1000px) {*/
+    /*.pagination {*/
+        /*left: 0;*/
+    /*}*/
+/*}*/
