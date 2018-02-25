@@ -83,26 +83,31 @@ router.post('/uploadCloak', isLoggedIn, upload.any(), function(req, res, next) {
 
 router.get('/cloak/:vestID',function(req, res, next){
     try {
-        const vestID = req.params.vestID || 1;
-        Cloak.findOne({ vestID: parseInt(vestID) }).exec((err, file) => {
-            if (err) {
-                err.error_text = 'Не существует плаща с таким идентификатором';
-                return next(err);
-            }
+        Cloak.count().exec(function(err, count) {
+            const vestID = req.params.vestID || 1;
+            Cloak.findOne({ vestID: parseInt(vestID) }).exec((err, file) => {
+                if (err) {
+                    err.error_text = 'Не существует плаща с таким идентификатором';
+                    return next(err);
+                }
 
-            let user = '';
-            if (isLoggedIn) {user = req.user}
+                let user = '';
+                if (isLoggedIn) {user = req.user}
 
-            res.render("vest.pug",{
-                image: file,
-                user: user,
-                activeLink: 'product_2',
-                updatePriceLink: "/update-cloak",
-                updateDescription: "/update-cloak-description",
-                title: 'Сигнальные жилеты оптом. Signalvest-kostroma',
-                desc: file.description.split("\r\n")
-            });
-        })
+                res.render("vest.pug",{
+                    image: file,
+                    user: user,
+                    activeLink: 'product_2',
+                    updatePriceLink: "/update-cloak",
+                    updateDescription: "/update-cloak-description",
+                    title: 'Сигнальные жилеты оптом. Signalvest-kostroma',
+                    isFirstVest: file.vestID <= 1,
+                    isLastVest: count <= file.vestID,
+                    desc: file.description.split("\r\n")
+                });
+            })
+        });
+
     } catch(err) {
         console.log('Не найден жилет');
     }
