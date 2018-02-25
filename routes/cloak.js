@@ -83,8 +83,8 @@ router.post('/uploadCloak', isLoggedIn, upload.any(), function(req, res, next) {
 
 router.get('/cloak/:vestID',function(req, res, next){
     try {
-        const cloakID = req.params.cloakID || 1;
-        Cloak.findOne({ cloakID: parseInt(cloakID) }).exec((err, file) => {
+        const vestID = req.params.vestID || 1;
+        Cloak.findOne({ cloakID: parseInt(vestID) }).exec((err, file) => {
             if (err) {
                 err.error_text = 'Не существует плаща с таким идентификатором';
                 return next(err);
@@ -114,7 +114,7 @@ router.get('/product/2', function(req, res, next) {
     if (isLoggedIn) {user = req.user}
 
     Cloak.find()
-        .select('originalname path price cloakID')
+        .select('originalname path price vestID')
         .sort({originalname: 'asc'})
         .exec(function(err, cloaks) {
             Cloak.count().exec(function(err, count) {
