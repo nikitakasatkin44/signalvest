@@ -244,14 +244,14 @@ router.post('/update-vest', function(req ,res, next) {
 });
 
 router.post('/update-description', function(req, res, next) {
-    const vestID = req.body.id;
+    const vestID = req.body.vestID;
     const newHeader = req.body.headerText;
     const newDesc = req.body.description;
-    const newSerial = req.body.serial;
-    Image.findByIdAndUpdate(vestID, {
+    const newVestID = req.body.newVestID;
+    Image.findOneAndUpdate({vestID: parseInt(vestID)}, {
         originalname: newHeader,
         description: newDesc,
-        serial: newSerial
+        vestID: newVestID
         },
         function(err, result) {
         if (err) throw err;
