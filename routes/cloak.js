@@ -9,7 +9,7 @@ const connection = mongoose.createConnection(configDB.imagesDB);
 const autoIncrement = require('mongoose-auto-increment');
 
 const cloakSchema = mongoose.Schema({
-    cloakID: { type: mongoose.Schema.Types.ObjectId },
+    vestID: { type: mongoose.Schema.Types.ObjectId },
     path: {
         type: String,
         required: true,
@@ -35,7 +35,7 @@ const cloakSchema = mongoose.Schema({
 
 cloakSchema.plugin(autoIncrement.plugin, {
     model: 'cloaks',
-    field: 'cloakID',
+    field: 'vestID',
     startAt: 1,
     incrementBy: 1
 });
@@ -81,13 +81,15 @@ router.post('/uploadCloak', isLoggedIn, upload.any(), function(req, res, next) {
     res.redirect('/product/2');
 });
 
-router.get('/cloak/:id',function(req, res, next){
+router.get('/cloak/:vestID',function(req, res, next){
     try {
-        Cloak.findById(req.params.id, function(err, file){
+        const cloakID = req.params.cloakID || 1;
+        Cloak.findOne({ cloakID: parseInt(cloakID) }).exec((err, file) => {
             if (err) {
-                err.error_text = 'Не существует плаща с тамим идентификатором';
+                err.error_text = 'Не существует плаща с таким идентификатором';
                 return next(err);
             }
+
             let user = '';
             if (isLoggedIn) {user = req.user}
 
@@ -97,10 +99,10 @@ router.get('/cloak/:id',function(req, res, next){
                 activeLink: 'product_2',
                 updatePriceLink: "/update-cloak",
                 updateDescription: "/update-cloak-description",
-                title: 'Сигнальные жилеты оптом. Signalvest-kostroma'
+                title: 'Сигнальные жилеты оптом. Signalvest-kostroma',
+                desc: file.description.split("\r\n")
             });
-
-        });
+        })
     } catch(err) {
         console.log('Не найден жилет');
     }

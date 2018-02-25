@@ -125,7 +125,7 @@ router.get('/vest/:vestID',function(req, res, next){
                 if (req.params.vestID !== '0') {
                     Image.findOne({ vestID: parseInt(vestID) }).exec((err, file) => {
                         if (err) {
-                            err.error_text = 'Не существует жилета с тамим идентификатором';
+                            err.error_text = 'Не существует жилета с таким идентификатором';
                             return next(err);
                         }
 
