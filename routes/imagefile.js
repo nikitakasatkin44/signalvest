@@ -137,6 +137,7 @@ router.get('/vest/:vestID',function(req, res, next){
                     updatePriceLink: "/update-vest",
                     updateDescription: "/update-description",
                     title: 'Сигнальные жилеты оптом',
+                    isFirstVest: file.vestID <= 1,
                     isLastVest: count <= file.vestID
                 });
             })
