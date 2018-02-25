@@ -59,3 +59,16 @@
 #descHeaderInp {
     font-size: 24px;
 }
+
+#serial {
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    border: solid 3px white;
+    font-size: 2rem;
+    color: rgb(255, 255, 255);
+    background-color: rgb(89, 163, 199);
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+}
