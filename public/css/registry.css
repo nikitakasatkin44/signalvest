@@ -116,20 +116,20 @@ html, body {
 
 @media(min-width: 1000px) {
     .bg-desktop {
-        /*width: auto;*/
-        /*height: 600px;*/
-        /*background: rgba(255, 255, 255, 1) url(/img/background/сигнал6.png) no-repeat;*/
-        /*background-size: 100% 100%;*/
         margin: 0 auto;
-        /*height: auto;*/
         max-width: 100%;
+    }
+
+    .circle {
+        right: 70px;
     }
 }
 @media(max-width: 1000px) {
     .bg-mobile {
-        /*background-color: rgba(62, 114, 179, 0.42);*/
         height: 700px;
-        /*background: url(/img/background/сигнал.png) center;*/
+    }
+    .circle {
+        right: 10px;
     }
 }
 
@@ -182,7 +182,6 @@ html, body {
     color: white;
     align-content: right;
     bottom: 60px;
-    right: 10px;
     /*transition: transform .5s;*/
     box-shadow: 3px -5px rgba(255, 255, 255, 1.00);
 }

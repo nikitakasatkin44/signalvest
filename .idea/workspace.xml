@@ -17,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-16">
-              <caret line="16" column="10" lean-forward="false" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+            <state relative-caret-position="154">
+              <caret line="26" column="28" lean-forward="true" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -57,13 +57,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="registry.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="registry.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/registry.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="176" column="24" lean-forward="true" selection-start-line="176" selection-start-column="24" selection-end-line="176" selection-end-column="24" />
+            <state relative-caret-position="459">
+              <caret line="129" column="5" lean-forward="true" selection-start-line="129" selection-start-column="5" selection-end-line="129" selection-end-column="5" />
               <folding>
-                <marker date="1519564000441" expanded="false" signature="5989:6044" ph="..." />
+                <marker date="1519564200269" expanded="false" signature="5726:5781" ph="..." />
               </folding>
             </state>
           </provider>
@@ -93,7 +93,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.card</find>
       <find>card-inverse</find>
       <find>delivery</find>
       <find>delivery-card</find>
@@ -123,6 +122,7 @@
       <find>/update-description</find>
       <find>.priceTmplWrapper</find>
       <find>editPriceTmpl</find>
+      <find>circle</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -442,14 +442,7 @@
       <workItem from="1519230375027" duration="841000" />
       <workItem from="1519373718031" duration="6123000" />
       <workItem from="1519463137408" duration="6815000" />
-      <workItem from="1519542909470" duration="18248000" />
-    </task>
-    <task id="LOCAL-00012" summary="04.02">
-      <created>1517768801162</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1517768801162</updated>
+      <workItem from="1519542909470" duration="18464000" />
     </task>
     <task id="LOCAL-00013" summary="04.02 final commit">
       <created>1517771227043</created>
@@ -787,11 +780,18 @@
       <option name="project" value="LOCAL" />
       <updated>1519563881903</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="25.02 serial numbers added to vests">
+      <created>1519564021922</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1519564021922</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="384545000" />
+    <option name="totallyTimeSpent" value="384761000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1200,14 +1200,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-16">
-          <caret line="16" column="10" lean-forward="false" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/imagefile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
@@ -1242,11 +1234,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/registry.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="176" column="24" lean-forward="true" selection-start-line="176" selection-start-column="24" selection-end-line="176" selection-end-column="24" />
+        <state relative-caret-position="459">
+          <caret line="129" column="5" lean-forward="true" selection-start-line="129" selection-start-column="5" selection-end-line="129" selection-end-column="5" />
           <folding>
-            <marker date="1519564000441" expanded="false" signature="5989:6044" ph="..." />
+            <marker date="1519564200269" expanded="false" signature="5726:5781" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="26" column="28" lean-forward="true" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
