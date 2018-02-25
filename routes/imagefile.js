@@ -119,33 +119,39 @@ router.get('/vest/:vestID',function(req, res, next){
     //
     //     });
     // }
-    Image.count().exec(function(err, count) {
-        try {
-            Image.findOne({ vestID: req.params.vestID }).exec((err, file) => {
-                if (err) {
-                    err.error_text = 'Не существует жилета с тамим идентификатором';
-                    return next(err);
-                }
+    try {
+        Image.count().exec(function(err, count) {
+            try {
+                Image.findOne({ vestID: req.params.vestID }).exec((err, file) => {
+                    if (err) {
+                        err.error_text = 'Не существует жилета с тамим идентификатором';
+                        return next(err);
+                    }
 
-                let user = '';
-                if (isLoggedIn) {user = req.user}
+                    let user = '';
+                    if (isLoggedIn) {user = req.user}
 
-                res.render("vest.pug",{
-                    image: file,
-                    user: user,
-                    activeLink: 'product_1',
-                    updatePriceLink: "/update-vest",
-                    updateDescription: "/update-description",
-                    title: 'Сигнальные жилеты оптом',
-                    isFirstVest: file.vestID <= 1,
-                    isLastVest: count <= file.vestID
-                });
-            })
-        }
-        catch (err) {
-            console.log('Не найден жилет');
-        }
-    });
+                    res.render("vest.pug",{
+                        image: file,
+                        user: user,
+                        activeLink: 'product_1',
+                        updatePriceLink: "/update-vest",
+                        updateDescription: "/update-description",
+                        title: 'Сигнальные жилеты оптом',
+                        isFirstVest: file.vestID <= 1,
+                        isLastVest: count <= file.vestID
+                    });
+                })
+            }
+            catch (err) {
+                console.log('Не найден жилет');
+            }
+        });
+    }
+    catch (err) {
+        console.log('Нету жилета с таким идентификатором');
+    }
+
 
 
 
