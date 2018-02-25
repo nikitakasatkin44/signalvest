@@ -61,9 +61,9 @@ html(lang="en")
                                                     input.col-sm-2#editID.form-control.form-control-lg(name="newVestID" value=image.vestID)
 
                                 #viewTmpl
-                                    h1#descHeaderInp.text-left= image.originalname
+                                    h1#descHeaderInp.text-left(style="font-size: 2rem")= image.originalname
                                     for descRow in desc
-                                        p.mb-0=descRow
+                                        p(style="font-size: 1.3rem").mb-0=descRow
                                     span#serial.d-none.d-lg-block= image.vestID
 
                         .row.mt-md-5(style="height: 80px")
