@@ -84,7 +84,7 @@ router.post('/uploadCloak', isLoggedIn, upload.any(), function(req, res, next) {
 router.get('/cloak/:vestID',function(req, res, next){
     try {
         const vestID = req.params.vestID || 1;
-        Cloak.findOne({ cloakID: parseInt(vestID) }).exec((err, file) => {
+        Cloak.findOne({ vestID: parseInt(vestID) }).exec((err, file) => {
             if (err) {
                 err.error_text = 'Не существует плаща с таким идентификатором';
                 return next(err);
@@ -136,9 +136,9 @@ router.post('/update-cloak', function(req ,res, next) {
 
     if (req.user.local.role !== 'admin') res.redirect('/');
 
-    const cloakID = req.body.id;
+    const vestID = req.body.id;
     const newPrice = req.body.price;
-    Cloak.findByIdAndUpdate(cloakID, { price: newPrice}, function(err, result) {
+    Cloak.findByIdAndUpdate(vestID, { price: newPrice}, function(err, result) {
         if (err) throw err;
         console.log(result);
     });
@@ -146,10 +146,10 @@ router.post('/update-cloak', function(req ,res, next) {
 });
 
 router.post('/update-cloak-description', function(req, res, next) {
-    const cloakID = req.body.id;
+    const vestID = req.body.vestID;
     const newHeader = req.body.headerText;
     const newDesc = req.body.description;
-    Cloak.findByIdAndUpdate(cloakID, { originalname: newHeader, description: newDesc}, function(err, result) {
+    Cloak.findOneAndUpdate({vestID: parseInt(vestID)}, { originalname: newHeader, description: newDesc}, function(err, result) {
         if (err) throw err;
         console.log(result);
     });
