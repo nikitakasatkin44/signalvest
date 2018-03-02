@@ -123,6 +123,10 @@
     right: 20px;
 }
 
+.vest-img {
+    max-height: 500px;
+}
+
 /*@media(max-width: 500px) {*/
     /*.pagination {*/
         /*padding-top: 100px;*/

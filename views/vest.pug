@@ -14,7 +14,7 @@ html(lang="en")
             .container.white-list
                 .row
                     .col-lg-6.col-md-12
-                        img(src=image.path style="width: 100%;")
+                        img.vest-img(src=image.path style="width: 100%;")
                         if user && user.local.role === 'admin'
                             .editPriceTmplWrapper
                                 .edit-inp.d-none.form-inline

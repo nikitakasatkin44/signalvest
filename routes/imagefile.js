@@ -241,20 +241,25 @@ router.post('/update-vest', function(req ,res, next) {
 });
 
 router.post('/update-description', function(req, res, next) {
-    const vestID = req.body.vestID;
-    const newHeader = req.body.headerText;
-    const newDesc = req.body.description;
-    const newVestID = req.body.newVestID;
-    Image.findOneAndUpdate({vestID: parseInt(vestID)}, {
-        originalname: newHeader,
-        description: newDesc,
-        vestID: newVestID
-        },
-        function(err, result) {
-        if (err) throw err;
-        console.log(result);
-    });
-    res.redirect('/product/1');
+    try {
+        const vestID = req.body.vestID;
+        const newHeader = req.body.headerText;
+        const newDesc = req.body.description;
+        const newVestID = req.body.newVestID;
+        Image.findOneAndUpdate({vestID: parseInt(vestID)}, {
+                originalname: newHeader,
+                description: newDesc,
+                vestID: newVestID
+            },
+            function(err, result) {
+                if (err) throw err;
+                console.log(result);
+            });
+        res.redirect('/product/1');
+    } catch (err) {
+        console.log('Ошибка при редактировании описания жилета')
+    }
+
 });
 
 function isLoggedIn(req, res, next) {
