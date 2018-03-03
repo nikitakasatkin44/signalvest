@@ -86,7 +86,8 @@ router.get('/cloak/:vestID',function(req, res, next){
         Cloak.count().exec(function(err, count) {
             const vestID = req.params.vestID || 1;
             Cloak.findOne({ vestID: parseInt(vestID) }).exec((err, file) => {
-                if (err) {
+                if (err || !file) {
+                    if (!err) {err = {}}
                     err.error_text = 'Не существует плаща с таким идентификатором';
                     return next(err);
                 }

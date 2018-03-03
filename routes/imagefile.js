@@ -124,15 +124,14 @@ router.get('/vest/:vestID',function(req, res, next){
                 const vestID = req.params.vestID || 1;
                 if (req.params.vestID !== '0') {
                     Image.findOne({ vestID: parseInt(vestID) }).exec((err, file) => {
-                        if (err) {
+                        if (err || !file) {
+                            if (!err) {err = {}}
                             err.error_text = 'Не существует жилета с таким идентификатором';
                             return next(err);
                         }
 
                         let user = '';
                         if (isLoggedIn) {user = req.user}
-
-                        const descArray = file.description.split("\r\n");
 
                         res.render("vest.pug",{
                             image: file,
@@ -143,7 +142,7 @@ router.get('/vest/:vestID',function(req, res, next){
                             title: 'Сигнальные жилеты оптом',
                             isFirstVest: file.vestID <= 1,
                             isLastVest: count <= file.vestID,
-                            desc: descArray
+                            desc: file.description.split("\r\n")
                         });
                     })
                 }
