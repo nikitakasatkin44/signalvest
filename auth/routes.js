@@ -141,6 +141,13 @@ module.exports = function(app, passport) {
         });
     });
 
+    app.get('/test', (req, res) => {
+
+        res.render('test.pug', {
+            custom: 'какие-то данные, 12345'
+        });
+    });
+
     // app.get('/createAdmin', (req, res) => {
     //     const newAdmin = new User();
     //

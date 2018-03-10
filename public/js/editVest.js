@@ -13,6 +13,10 @@ $(document).ready(function() {
         $('#editTmpl').toggleClass('d-none');
         $('#viewTmpl').toggleClass('d-none');
         $("#applyDescBtn").toggleClass('d-none');
+        $("#applyDiscountBtn").toggleClass('d-none');
+
+        $('.editDiscount').toggleClass('d-none');
+        $('.viewDiscount').toggleClass('d-none');
 
     });
 });

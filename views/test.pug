@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+    include includes/head
+
+
+    body
+        div#app
+            p {{message}}
+            p= custom
+
+
+
+        p=message
+        p=error_text
+
+        p Перейти на главную
+            |
+            |
+            a(href="/"): i.fa.fa-home
+
+    script(src="/js/vue.js")
+    script(src="/js/test-script.js")
+

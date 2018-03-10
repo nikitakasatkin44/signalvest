@@ -27,7 +27,7 @@ const imagePath = mongoose.Schema({
         default: Date.now
     },
     price: {
-        type: Number,
+        type: String,
         default: 100
     },
     description: {
@@ -38,6 +38,9 @@ const imagePath = mongoose.Schema({
     },
     serial: {
         type: Number
+    },
+    discount: {
+        type: String
     }
 });
 
@@ -245,10 +248,12 @@ router.post('/update-description', function(req, res, next) {
         const newHeader = req.body.headerText;
         const newDesc = req.body.description;
         const newVestID = req.body.newVestID;
+        const newDiscount = req.body.discount;
         Image.findOneAndUpdate({vestID: parseInt(vestID)}, {
                 originalname: newHeader,
                 description: newDesc,
-                vestID: newVestID
+                vestID: newVestID,
+                discount: newDiscount
             },
             function(err, result) {
                 if (err) throw err;
@@ -257,6 +262,24 @@ router.post('/update-description', function(req, res, next) {
         res.redirect('/product/1');
     } catch (err) {
         console.log('Ошибка при редактировании описания жилета')
+    }
+
+});
+
+router.post('/update-discount', function(req, res, next) {
+    try {
+        const vestID = req.body.vestID;
+        const newDiscount = req.body.discount;
+        Image.findOneAndUpdate({vestID: parseInt(vestID)}, {
+                discount: newDiscount
+            },
+            function(err, result) {
+                if (err) throw err;
+                console.log(result);
+            });
+        res.redirect('/product/1');
+    } catch (err) {
+        console.log('Ошибка при редактировании скидки по жилету')
     }
 
 });
